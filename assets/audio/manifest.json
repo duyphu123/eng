@@ -1,0 +1,31 @@
+{
+  "en-US": {
+    "abide by": "abide-by.mp3",
+    "agreement": "agreement.mp3",
+    "assurance": "assurance.mp3",
+    "cancellation": "cancellation.mp3",
+    "determine": "determine.mp3",
+    "engage": "engage.mp3",
+    "establish": "establish.mp3",
+    "obligate": "obligate.mp3",
+    "party": "party.mp3",
+    "provision": "provision.mp3",
+    "resolve": "resolve.mp3",
+    "specific": "specific.mp3",
+    "When TechCorp decided to expand its business, it needed to engage a reliable software supplier. After several rounds of negotiation, both parties reached an agreement on the specific terms of the contract. The legal department spent a week to determine which provisions were essential. They asked the supplier for a written assurance of product quality, and required clauses that obligate the company to provide timely support. To establish a clear framework, the contract included rules that both sides must abide by. For example, prices cannot change during the first year, and any major update requires written approval from both parties. The cancellation clause is also important. Either party may end the agreement with 60 days notice. If disagreements occur, the parties have agreed to resolve disputes through mediation, not litigation. This careful approach protects everyone's interests and gives both companies confidence in a long-term business relationship.": "passage-a-software-licensing-deal.mp3"
+  },
+  "vi-VN": {
+    "tuân thủ, làm theo": "tuan-thu-lam-theo.mp3",
+    "sự thỏa thuận, hợp đồng": "su-thoa-thuan-hop-dong.mp3",
+    "sự đảm bảo, sự chắc chắn": "su-dam-bao-su-chac-chan.mp3",
+    "sự hủy bỏ": "su-huy-bo.mp3",
+    "xác định, quyết định": "xac-dinh-quyet-dinh.mp3",
+    "tham gia, thuê, thu hút": "tham-gia-thue-thu-hut.mp3",
+    "thành lập, thiết lập": "thanh-lap-thiet-lap.mp3",
+    "bắt buộc, ép buộc": "bat-buoc-ep-buoc.mp3",
+    "bên (trong hợp đồng), nhóm người": "ben-trong-hop-dong-nhom-nguoi.mp3",
+    "điều khoản, sự dự phòng": "dieu-khoan-su-du-phong.mp3",
+    "giải quyết, quyết tâm": "giai-quyet-quyet-tam.mp3",
+    "cụ thể, đặc biệt": "cu-the-dac-biet.mp3"
+  }
+}
