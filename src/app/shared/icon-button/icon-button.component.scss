@@ -1,0 +1,23 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+:host {
+  display: inline-flex;
+}
+
+.icon-btn {
+  @include icon-button(36px);
+
+  @include media-md {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.is-active {
+    @include button-active;
+
+    &.is-pulse {
+      @include button-pulse;
+    }
+  }
+}

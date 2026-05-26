@@ -1,0 +1,59 @@
+<aside class="sidebar">
+  <a class="brand" routerLink="/">
+    <span class="brand__mark">E</span>
+    <span class="brand__text">
+      <span class="brand__name">EngToeic</span>
+      <span class="brand__tag">Luyện nghe & từ vựng</span>
+    </span>
+  </a>
+
+  <nav class="nav">
+    <ul class="menu">
+      @for (item of menu; track item.label) {
+        <ng-container
+          *ngTemplateOutlet="branch; context: { $implicit: item, depth: 0 }"
+        />
+      }
+    </ul>
+  </nav>
+</aside>
+
+<ng-template #branch let-item let-depth="depth">
+  <li class="menu__item" [attr.data-depth]="depth">
+    @if (item.children?.length) {
+      <button
+        type="button"
+        class="menu__btn"
+        [attr.data-depth]="depth"
+        [attr.aria-expanded]="isExpanded(item.label)"
+        (click)="toggle(item.label)"
+      >
+        <span class="menu__chev" [class.is-open]="isExpanded(item.label)">
+          <svg viewBox="0 0 16 16" width="10" height="10" aria-hidden="true">
+            <path d="M5 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="menu__label">{{ item.label }}</span>
+      </button>
+      @if (isExpanded(item.label)) {
+        <ul class="menu menu--sub">
+          @for (child of item.children; track child.label) {
+            <ng-container
+              *ngTemplateOutlet="branch; context: { $implicit: child, depth: depth + 1 }"
+            />
+          }
+        </ul>
+      }
+    } @else {
+      <a
+        class="menu__link"
+        [attr.data-depth]="depth"
+        [routerLink]="item.route"
+        routerLinkActive="is-active"
+      >
+        <span class="menu__bullet"></span>
+        <span class="menu__label">{{ item.label }}</span>
+      </a>
+    }
+  </li>
+</ng-template>

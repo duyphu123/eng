@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Document with folded top-right corner -->
+  <path d="M50 20 L120 20 L150 50 L150 120 L50 120 Z" fill="#EEF2FF" stroke="#4F46E5" stroke-width="3"/>
+  <path d="M120 20 L120 50 L150 50" stroke="#4F46E5" stroke-width="3"/>
+  <!-- Text lines -->
+  <line x1="65" y1="62" x2="135" y2="62" stroke="#4F46E5" stroke-width="2.5"/>
+  <line x1="65" y1="76" x2="135" y2="76" stroke="#4F46E5" stroke-width="2.5"/>
+  <line x1="65" y1="90" x2="120" y2="90" stroke="#4F46E5" stroke-width="2.5"/>
+  <!-- Signature wave -->
+  <path d="M65 108 Q72 102 78 108 T92 108 T108 108" stroke="#F59E0B" stroke-width="2.5"/>
+</svg>

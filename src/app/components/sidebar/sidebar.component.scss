@@ -1,0 +1,216 @@
+@use '../../../styles/tokens' as *;
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-neutral-0);
+  border-right: 1px solid var(--color-neutral-200);
+  box-shadow: 1px 0 0 var(--color-neutral-100);
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  overflow-y: auto;
+}
+
+// ─── Brand ────────────────────────────────────────────────
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-2) var(--space-4);
+  margin: 0 0 var(--space-3);
+  border-bottom: 1px solid var(--color-neutral-100);
+  text-decoration: none;
+  color: var(--color-neutral-900);
+  min-height: 44px;
+}
+
+.brand__mark {
+  @include type-heading-md;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--rounded-md);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-strong));
+  color: var(--color-neutral-0);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.brand__name {
+  @include type-heading-md;
+  font-size: 16px;
+  color: var(--color-neutral-900);
+}
+
+.brand__tag {
+  @include type-caption;
+  color: var(--color-neutral-600);
+  margin-top: 2px;
+}
+
+// ─── Nav ──────────────────────────────────────────────────
+.nav {
+  flex: 1;
+  min-height: 0;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.menu--sub {
+  position: relative;
+  margin: var(--space-1) 0 var(--space-2) var(--space-3);
+  padding-left: var(--space-3);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: var(--space-1);
+    bottom: var(--space-1);
+    width: 1px;
+    background: var(--color-neutral-200);
+  }
+}
+
+.menu__item {
+  display: flex;
+  flex-direction: column;
+}
+
+// ─── Buttons & links (shared base) ────────────────────────
+.menu__btn,
+.menu__link {
+  @include type-label-md;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 44px; // WCAG touch target
+  background: transparent;
+  border: none;
+  border-radius: var(--rounded-md);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-neutral-800);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
+
+  &:hover {
+    background: var(--color-primary-soft);
+    color: var(--color-primary-strong);
+  }
+
+  &:active {
+    transform: scale(0.985);
+  }
+}
+
+// Depth-0 (top-level parent) — bolder, slightly larger
+.menu__btn[data-depth='0'] {
+  @include type-heading-md;
+  font-size: 15px;
+  padding: var(--space-3);
+  color: var(--color-neutral-900);
+}
+
+// Depth-2 (leaf) — smaller, regular
+.menu__link[data-depth='2'] {
+  @include type-body-sm;
+  padding: var(--space-2) var(--space-3);
+}
+
+// ─── Active leaf — left accent bar + soft fill ────────────
+.menu__link.is-active {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-strong);
+  font-weight: 600;
+  padding-left: calc(var(--space-3) + 4px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 3px;
+    border-radius: var(--rounded-pill);
+    background: var(--color-primary);
+  }
+
+  .menu__bullet {
+    background: var(--color-primary);
+  }
+
+  &:hover {
+    background: var(--color-primary-soft);
+    color: var(--color-primary-strong);
+  }
+}
+
+// ─── Icons ────────────────────────────────────────────────
+.menu__chev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: var(--color-neutral-400);
+  transition: transform 0.18s ease, color 0.18s ease;
+
+  &.is-open {
+    transform: rotate(90deg);
+    color: var(--color-primary);
+  }
+}
+
+.menu__bullet {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--rounded-pill);
+  background: var(--color-neutral-400);
+  margin-left: 3px;
+  transition: background 0.18s ease;
+}
+
+.menu__label {
+  flex: 1;
+  line-height: 1.3;
+}
+
+// ─── Scrollbar polish ─────────────────────────────────────
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-200);
+  border-radius: var(--rounded-pill);
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-400);
+}

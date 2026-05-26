@@ -1,0 +1,166 @@
+<div class="listen">
+  <div class="listen__controls">
+    <button
+      type="button"
+      class="play-btn"
+      [class.is-playing]="playingAll()"
+      (click)="togglePlayAll()"
+    >
+      @if (playingAll()) {
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <rect x="6" y="5" width="4" height="14" fill="currentColor" rx="1" />
+          <rect x="14" y="5" width="4" height="14" fill="currentColor" rx="1" />
+        </svg>
+        <span>Tạm dừng</span>
+      } @else {
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M8 5v14l11-7z" />
+        </svg>
+        <span>Phát toàn bộ</span>
+      }
+    </button>
+
+    <button
+      type="button"
+      class="loop-btn"
+      [class.is-active]="loop()"
+      [attr.aria-pressed]="loop()"
+      (click)="toggleLoop()"
+    >
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17 1l4 4-4 4M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 01-4 4H3"
+        />
+      </svg>
+      <span>Lặp lại</span>
+    </button>
+
+    <button
+      type="button"
+      class="settings-btn"
+      [class.is-active]="settingsOpen()"
+      [attr.aria-expanded]="settingsOpen()"
+      (click)="toggleSettings()"
+    >
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 15a3 3 0 100-6 3 3 0 000 6z"
+        />
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"
+        />
+      </svg>
+      <span>Giọng đọc</span>
+    </button>
+
+    <p class="hint">
+      Mỗi từ đọc <strong>EN</strong> rồi <strong>VI</strong>, sau đó sang từ kế.
+    </p>
+  </div>
+
+  @if (settingsOpen()) {
+    <div class="voice-settings">
+      <p class="voice-tip">
+        <strong>{{ enStaticCount() + viStaticCount() }}</strong> audio MP3
+        pre-record bằng Microsoft Neural (Aria · HoaiMy) — ưu tiên local, fallback
+        Web Speech khi text không có trong manifest.
+      </p>
+
+      <div class="voice-row">
+        <div class="voice-row__label">
+          <span class="lang-tag lang-tag--en">EN</span>
+          <span class="voice-row__name">Tiếng Anh</span>
+          <span class="voice-row__count">{{ enStaticCount() }} MP3</span>
+        </div>
+        <div class="voice-row__control">
+          @if (enVoices().length) {
+            <select
+              id="en-voice"
+              class="voice-select"
+              [value]="enSelected()"
+              (change)="onVoiceChange('en-US', $event)"
+            >
+              <option value="">Tự động · {{ enActiveName() }}</option>
+              @for (v of enVoices(); track v.voiceURI) {
+                <option [value]="v.voiceURI">
+                  {{ v.name
+                  }}{{ v.localService ? ' · offline' : '' }}
+                </option>
+              }
+            </select>
+          } @else {
+            <p class="voice-row__note">
+              Chỉ phát MP3 pre-recorded — Web Speech không khả dụng.
+            </p>
+          }
+        </div>
+      </div>
+
+      <div class="voice-row">
+        <div class="voice-row__label">
+          <span class="lang-tag lang-tag--vi">VI</span>
+          <span class="voice-row__name">Tiếng Việt</span>
+          <span class="voice-row__count">{{ viStaticCount() }} MP3</span>
+        </div>
+        <div class="voice-row__control">
+          @if (viVoices().length) {
+            <select
+              id="vi-voice"
+              class="voice-select"
+              [value]="viSelected()"
+              (change)="onVoiceChange('vi-VN', $event)"
+            >
+              <option value="">Tự động · {{ viActiveName() }}</option>
+              @for (v of viVoices(); track v.voiceURI) {
+                <option [value]="v.voiceURI">
+                  {{ v.name
+                  }}{{ v.localService ? ' · offline' : '' }}
+                </option>
+              }
+            </select>
+          } @else {
+            <p class="voice-row__note">
+              Chỉ phát MP3 pre-recorded — Web Speech không khả dụng.
+            </p>
+          }
+        </div>
+      </div>
+    </div>
+  }
+
+  <ol class="listen__list">
+    @for (it of items; track it.word; let i = $index) {
+      <li
+        class="listen__row"
+        [class.is-playing]="playingIndex() === i"
+        (click)="playOne(i)"
+      >
+        <span class="listen__num">{{ i + 1 }}</span>
+        <div class="listen__text">
+          <p class="listen__word">{{ it.word }}</p>
+          <p class="listen__vi">{{ it.vi }}</p>
+        </div>
+        @if (playingIndex() === i) {
+          <span class="listen__indicator" aria-label="Đang phát">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+          </span>
+        }
+      </li>
+    }
+  </ol>
+</div>

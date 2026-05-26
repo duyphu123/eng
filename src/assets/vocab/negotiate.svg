@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Left bubble (indigo) -->
+  <path d="M22 28 H82 Q92 28 92 38 V70 Q92 80 82 80 H75 L65 95 L60 80 H22 Q12 80 12 70 V38 Q12 28 22 28 Z" fill="#EEF2FF" stroke="#4F46E5" stroke-width="3"/>
+  <line x1="26" y1="44" x2="78" y2="44" stroke="#4F46E5" stroke-width="2.5"/>
+  <line x1="26" y1="56" x2="70" y2="56" stroke="#4F46E5" stroke-width="2.5"/>
+  <line x1="26" y1="68" x2="62" y2="68" stroke="#4F46E5" stroke-width="2.5"/>
+
+  <!-- Right bubble (amber) -->
+  <path d="M178 60 H118 Q108 60 108 70 V102 Q108 112 118 112 H140 L150 127 L155 112 H178 Q188 112 188 102 V70 Q188 60 178 60 Z" fill="#FEF3C7" stroke="#F59E0B" stroke-width="3"/>
+  <line x1="122" y1="76" x2="174" y2="76" stroke="#F59E0B" stroke-width="2.5"/>
+  <line x1="122" y1="88" x2="166" y2="88" stroke="#F59E0B" stroke-width="2.5"/>
+  <line x1="122" y1="100" x2="158" y2="100" stroke="#F59E0B" stroke-width="2.5"/>
+</svg>

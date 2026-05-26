@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Left figure -->
+  <circle cx="50" cy="45" r="14" fill="#EEF2FF" stroke="#4F46E5" stroke-width="3"/>
+  <path d="M30 105 Q30 78 50 78 Q70 78 70 105" fill="#EEF2FF" stroke="#4F46E5" stroke-width="3"/>
+  <!-- Right figure -->
+  <circle cx="150" cy="45" r="14" fill="#FEF3C7" stroke="#F59E0B" stroke-width="3"/>
+  <path d="M130 105 Q130 78 150 78 Q170 78 170 105" fill="#FEF3C7" stroke="#F59E0B" stroke-width="3"/>
+  <!-- Handshake line in middle -->
+  <line x1="62" y1="85" x2="138" y2="85" stroke="#4F46E5" stroke-width="4"/>
+  <!-- Handshake point -->
+  <circle cx="100" cy="85" r="9" fill="#F59E0B" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="100" cy="85" r="3" fill="#FFFFFF"/>
+</svg>

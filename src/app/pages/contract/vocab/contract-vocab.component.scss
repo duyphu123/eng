@@ -1,0 +1,200 @@
+@use '../../../../styles/tokens' as *;
+@use '../../../../styles/mixins' as *;
+@use '../../../../styles/breakpoints' as *;
+
+// ─── Tabs ─────────────────────────────────────────────────
+.tabs {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.tab {
+  @include type-label-md;
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: var(--space-3) var(--space-4);
+  min-height: 44px;
+  color: var(--color-neutral-600);
+  cursor: pointer;
+  @include transition-default;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &.is-active {
+    color: var(--color-primary);
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: var(--space-3);
+      right: var(--space-3);
+      bottom: -1px;
+      height: 3px;
+      background: var(--color-primary);
+      border-radius: var(--rounded-pill) var(--rounded-pill) 0 0;
+    }
+  }
+}
+
+.vocab-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+
+  @include media-md {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+}
+
+.vocab-card {
+  @include card-tinted(var(--color-accent-soft));
+  min-width: 0;
+  overflow: hidden;
+}
+
+.vocab-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.vocab-card__word {
+  @include type-heading-lg;
+  @include fluid-font(17px, 4.6vw, 24px);
+  color: var(--color-neutral-900);
+  margin: 0;
+  word-break: break-word;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.vocab-card__pos {
+  @include type-caption;
+  color: var(--color-neutral-600);
+  flex-shrink: 0;
+}
+
+.vocab-card__speaker {
+  margin-left: auto;
+}
+
+.vocab-card__ipa {
+  @include type-mono-vocab;
+  @include fluid-font(12px, 3.4vw, 15px);
+  color: var(--color-neutral-600);
+  margin: 0 0 var(--space-2);
+  word-break: break-word;
+}
+
+.vocab-card__vi {
+  @include type-body-md;
+  @include fluid-font(13px, 3.6vw, 16px);
+  color: var(--color-neutral-900);
+  margin: 0 0 var(--space-3);
+  font-weight: 500;
+}
+
+.vocab-card__ex {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-2);
+  margin: 0;
+  min-width: 0;
+}
+
+.vocab-card__sentence {
+  @include type-body-sm;
+  @include fluid-font(12px, 3.3vw, 14px);
+  color: var(--color-neutral-600);
+  font-style: italic;
+  flex: 1 1 auto;
+  min-width: 0;
+  word-break: break-word;
+
+  ::ng-deep mark {
+    background: var(--color-accent);
+    color: var(--color-neutral-900);
+    padding: 1px 4px;
+    border-radius: var(--rounded-sm);
+  }
+}
+
+.vocab-card__sentence--vi {
+  color: var(--color-neutral-900);
+  font-style: normal;
+  font-weight: 500;
+}
+
+// ─── Word families section ────────────────────────────────
+.vocab-card__family {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed rgba(15, 23, 42, 0.15);
+}
+
+.vocab-card__family-title {
+  @include type-caption;
+  color: var(--color-neutral-600);
+  text-transform: uppercase;
+  margin: 0 0 var(--space-2);
+}
+
+.vocab-card__family-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.family-chip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  min-width: 0;
+
+  &__pos {
+    @include type-caption;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    min-width: 28px;
+  }
+
+  &__word {
+    @include type-body-sm;
+    @include fluid-font(12px, 3.2vw, 14px);
+    color: var(--color-neutral-900);
+    font-weight: 600;
+    word-break: break-word;
+  }
+
+  &__vi {
+    @include type-body-sm;
+    @include fluid-font(11px, 3vw, 13px);
+    color: var(--color-neutral-600);
+    word-break: break-word;
+    flex: 1 1 100%;
+    margin-left: 36px; // align with word after pos column
+  }
+}
+
+@include media-md {
+  .family-chip__vi {
+    flex: 1 1 auto;
+    margin-left: 0;
+  }
+}

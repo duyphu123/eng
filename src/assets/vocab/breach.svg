@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Shield -->
+  <path d="M100 18 L142 32 L142 78 Q142 102 100 122 Q58 102 58 78 L58 32 Z" fill="#FEF3C7" stroke="#F59E0B" stroke-width="3.5"/>
+  <!-- Crack lightning bolt cutting through -->
+  <path d="M105 38 L88 70 L100 72 L92 102" stroke="#EF4444" stroke-width="5"/>
+  <!-- Small fragments to suggest break -->
+  <circle cx="80" cy="65" r="2.5" fill="#EF4444"/>
+  <circle cx="115" cy="80" r="2.5" fill="#EF4444"/>
+</svg>

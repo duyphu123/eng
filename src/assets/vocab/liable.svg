@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Top crossbar -->
+  <line x1="40" y1="32" x2="160" y2="32" stroke="#4F46E5" stroke-width="5"/>
+  <!-- Top knot -->
+  <circle cx="100" cy="32" r="6" fill="#4F46E5"/>
+  <!-- Pillar -->
+  <rect x="96" y="32" width="8" height="78" fill="#4F46E5"/>
+  <!-- Base -->
+  <rect x="78" y="106" width="44" height="8" rx="2" fill="#4F46E5"/>
+  <ellipse cx="100" cy="116" rx="32" ry="4" fill="#4F46E5" opacity="0.3"/>
+  <!-- Left chain -->
+  <line x1="55" y1="34" x2="55" y2="62" stroke="#4F46E5" stroke-width="2"/>
+  <!-- Right chain -->
+  <line x1="145" y1="34" x2="145" y2="58" stroke="#4F46E5" stroke-width="2"/>
+  <!-- Left pan (heavier — lower) -->
+  <path d="M30 62 Q55 90 80 62 Z" fill="#EEF2FF" stroke="#4F46E5" stroke-width="3"/>
+  <!-- Right pan (lighter — higher) -->
+  <path d="M120 58 Q145 82 170 58 Z" fill="#FEF3C7" stroke="#F59E0B" stroke-width="3"/>
+</svg>

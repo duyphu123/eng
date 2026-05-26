@@ -1,0 +1,344 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+:host {
+  display: block;
+}
+
+// ─── Controls bar ─────────────────────────────────────────
+.listen__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-primary-soft);
+  border-radius: var(--rounded-lg);
+  margin-bottom: var(--space-4);
+}
+
+.play-btn,
+.loop-btn {
+  @include type-label-md;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--rounded-md);
+  cursor: pointer;
+  @include transition-default;
+  @include clickable-feedback;
+}
+
+.play-btn {
+  background: var(--color-primary);
+  color: var(--color-neutral-0);
+  font-weight: 600;
+
+  &:hover {
+    background: var(--color-primary-strong);
+  }
+
+  &.is-playing {
+    background: var(--color-danger);
+
+    &:hover {
+      background: var(--color-danger);
+      filter: brightness(0.95);
+    }
+  }
+}
+
+.loop-btn,
+.settings-btn {
+  background: var(--color-neutral-0);
+  color: var(--color-neutral-600);
+  border-color: var(--color-neutral-200);
+
+  &:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary-soft);
+  }
+
+  &.is-active {
+    background: var(--color-primary);
+    color: var(--color-neutral-0);
+    border-color: var(--color-primary);
+  }
+}
+
+// ─── Voice settings panel ─────────────────────────────────
+.voice-settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--rounded-lg);
+  margin-bottom: var(--space-4);
+}
+
+.voice-tip {
+  @include type-caption;
+  color: var(--color-neutral-800);
+  margin: 0;
+  padding: var(--space-3) var(--space-3);
+  background: var(--color-primary-soft);
+  border-radius: var(--rounded-md);
+  line-height: 1.5;
+
+  strong {
+    color: var(--color-primary-strong);
+    font-weight: 700;
+    font-size: 14px;
+  }
+}
+
+.voice-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  @include media-md {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+  }
+}
+
+.voice-row__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+
+  @include media-md {
+    min-width: 200px;
+  }
+}
+
+.voice-row__name {
+  @include type-label-md;
+  color: var(--color-neutral-900);
+  font-weight: 600;
+}
+
+.voice-row__count {
+  @include type-caption;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: var(--color-success);
+  color: var(--color-neutral-0);
+  border-radius: var(--rounded-pill);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.lang-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 22px;
+  border-radius: var(--rounded-sm);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  font-family: var(--font-label-md-family);
+}
+
+.lang-tag--en {
+  background: var(--color-primary);
+  color: var(--color-neutral-0);
+}
+
+.lang-tag--vi {
+  background: var(--color-accent);
+  color: var(--color-neutral-900);
+}
+
+.voice-row__control {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.voice-select {
+  @include type-body-sm;
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-5) var(--space-2) var(--space-3);
+  background-color: var(--color-neutral-0);
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  background-size: 16px;
+  color: var(--color-neutral-900);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--rounded-md);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  @include transition-default;
+
+  &:hover {
+    border-color: var(--color-primary-soft);
+    background-color: var(--color-neutral-50);
+  }
+
+  &:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
+  }
+}
+
+.voice-row__note {
+  @include type-body-sm;
+  color: var(--color-neutral-600);
+  font-style: italic;
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-neutral-50);
+  border: 1px dashed var(--color-neutral-200);
+  border-radius: var(--rounded-md);
+}
+
+.hint {
+  @include type-caption;
+  color: var(--color-neutral-600);
+  margin: 0;
+  flex: 1 1 100%;
+
+  @include media-md {
+    flex: 1 1 200px;
+  }
+
+  strong {
+    color: var(--color-primary-strong);
+    font-weight: 600;
+  }
+}
+
+// ─── List ─────────────────────────────────────────────────
+.listen__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  counter-reset: none;
+}
+
+.listen__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--rounded-md);
+  cursor: pointer;
+  min-height: 44px;
+  @include transition-default;
+
+  &:hover {
+    border-color: var(--color-primary-soft);
+    background: var(--color-neutral-50);
+  }
+
+  &.is-playing {
+    background: var(--color-primary-soft);
+    border-color: var(--color-primary);
+
+    .listen__num {
+      background: var(--color-primary);
+      color: var(--color-neutral-0);
+    }
+
+    .listen__word {
+      color: var(--color-primary-strong);
+    }
+  }
+}
+
+.listen__num {
+  @include type-caption;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: var(--rounded-pill);
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-600);
+  font-weight: 600;
+  @include transition-default;
+}
+
+.listen__text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.listen__word {
+  @include type-heading-md;
+  @include fluid-font(16px, 4vw, 20px);
+  color: var(--color-neutral-900);
+  margin: 0 0 2px;
+  word-break: break-word;
+}
+
+.listen__vi {
+  @include type-body-sm;
+  @include fluid-font(13px, 3.4vw, 15px);
+  color: var(--color-neutral-600);
+  margin: 0;
+  word-break: break-word;
+}
+
+// ─── Animated "playing" indicator (3 bars) ────────────────
+.listen__indicator {
+  display: inline-flex;
+  align-items: end;
+  gap: 2px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.bar {
+  display: inline-block;
+  width: 3px;
+  background: var(--color-primary);
+  border-radius: var(--rounded-pill);
+  animation: bar-bounce 0.9s ease-in-out infinite;
+
+  &:nth-child(1) {
+    height: 60%;
+    animation-delay: 0s;
+  }
+  &:nth-child(2) {
+    height: 100%;
+    animation-delay: 0.15s;
+  }
+  &:nth-child(3) {
+    height: 75%;
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes bar-bounce {
+  0%, 100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}

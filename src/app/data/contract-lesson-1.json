@@ -1,0 +1,140 @@
+[
+  {
+    "word": "abide by",
+    "pos": "v.",
+    "ipa": "/əˈbaɪd baɪ/",
+    "vi": "tuân thủ, làm theo",
+    "example": "All [employees]{nhân viên} must [abide by]{tuân thủ} the [confidentiality policy]{chính sách bảo mật}.",
+    "exampleVi": "Tất cả nhân viên phải tuân thủ chính sách bảo mật.",
+    "highlight": "abide by"
+  },
+  {
+    "word": "agreement",
+    "pos": "n.",
+    "ipa": "/əˈɡriːmənt/",
+    "vi": "sự thỏa thuận, hợp đồng",
+    "example": "Both [parties]{các bên} reached a [mutual agreement]{thỏa thuận chung} after [long negotiations]{cuộc đàm phán dài}.",
+    "exampleVi": "Hai bên đã đạt được thỏa thuận chung sau cuộc đàm phán dài.",
+    "highlight": "agreement",
+    "family": [
+      { "pos": "v.", "word": "agree", "vi": "đồng ý, tán thành" },
+      { "pos": "n.", "word": "agreement", "vi": "sự đồng ý, thỏa thuận" },
+      { "pos": "adj.", "word": "agreeable", "vi": "dễ chịu, có thể đồng ý" }
+    ]
+  },
+  {
+    "word": "assurance",
+    "pos": "n.",
+    "ipa": "/əˈʃʊərəns/",
+    "vi": "sự đảm bảo, sự chắc chắn",
+    "example": "The [supplier]{nhà cung cấp} gave us a [written assurance]{đảm bảo bằng văn bản} of [quality]{chất lượng}.",
+    "exampleVi": "Nhà cung cấp đã đưa cho chúng tôi sự đảm bảo chất lượng bằng văn bản.",
+    "highlight": "assurance",
+    "family": [
+      { "pos": "v.", "word": "assure", "vi": "đảm bảo, cam đoan" },
+      { "pos": "n.", "word": "assurance", "vi": "sự đảm bảo, sự chắc chắn" },
+      { "pos": "adv.", "word": "assuredly", "vi": "chắc chắn, nhất định" }
+    ]
+  },
+  {
+    "word": "cancellation",
+    "pos": "n.",
+    "ipa": "/ˌkænsəˈleɪʃn/",
+    "vi": "sự hủy bỏ",
+    "example": "The [cancellation]{sự hủy bỏ} of the [contract]{hợp đồng} requires [30 days notice]{thông báo trước 30 ngày}.",
+    "exampleVi": "Việc hủy hợp đồng cần thông báo trước 30 ngày.",
+    "highlight": "cancellation",
+    "family": [
+      { "pos": "v.", "word": "cancel", "vi": "hủy bỏ" },
+      { "pos": "n.", "word": "cancellation", "vi": "sự hủy bỏ" },
+      { "pos": "adj.", "word": "canceled", "vi": "đã bị hủy bỏ" }
+    ]
+  },
+  {
+    "word": "determine",
+    "pos": "v.",
+    "ipa": "/dɪˈtɜːmɪn/",
+    "vi": "xác định, quyết định",
+    "example": "The [court]{tòa án} will [determine]{xác định} the [rightful owner]{chủ sở hữu hợp pháp} of the [property]{tài sản}.",
+    "exampleVi": "Tòa án sẽ xác định chủ sở hữu hợp pháp của tài sản.",
+    "highlight": "determine"
+  },
+  {
+    "word": "engage",
+    "pos": "v.",
+    "ipa": "/ɪnˈɡeɪdʒ/",
+    "vi": "tham gia, thuê, thu hút",
+    "example": "The [company]{công ty} [engaged]{thuê} a [lawyer]{luật sư} to [review]{xem xét} the [contract]{hợp đồng}.",
+    "exampleVi": "Công ty đã thuê một luật sư để xem xét hợp đồng.",
+    "highlight": "engage"
+  },
+  {
+    "word": "establish",
+    "pos": "v.",
+    "ipa": "/ɪˈstæblɪʃ/",
+    "vi": "thành lập, thiết lập",
+    "example": "The [agreement]{thỏa thuận} [establishes]{thiết lập} [clear responsibilities]{trách nhiệm rõ ràng} for both [parties]{các bên}.",
+    "exampleVi": "Thỏa thuận này thiết lập trách nhiệm rõ ràng cho cả hai bên.",
+    "highlight": "establish"
+  },
+  {
+    "word": "obligate",
+    "pos": "v.",
+    "ipa": "/ˈɒblɪɡeɪt/",
+    "vi": "bắt buộc, ép buộc",
+    "example": "The [contract]{hợp đồng} [obligates]{bắt buộc} the [seller]{bên bán} to [deliver]{giao hàng} within [60 days]{60 ngày}.",
+    "exampleVi": "Hợp đồng bắt buộc bên bán phải giao hàng trong vòng 60 ngày.",
+    "highlight": "obligate",
+    "family": [
+      { "pos": "v.", "word": "obligate", "vi": "bắt buộc, ép buộc" },
+      { "pos": "n.", "word": "obligation", "vi": "nghĩa vụ, sự bắt buộc" },
+      { "pos": "adj.", "word": "obligatory", "vi": "có tính bắt buộc" }
+    ]
+  },
+  {
+    "word": "party",
+    "pos": "n.",
+    "ipa": "/ˈpɑːti/",
+    "vi": "bên (trong hợp đồng), nhóm người",
+    "example": "Each [party]{bên} must [sign]{ký} the [agreement]{thỏa thuận} before it becomes [binding]{ràng buộc}.",
+    "exampleVi": "Mỗi bên phải ký vào thỏa thuận trước khi nó có hiệu lực ràng buộc.",
+    "highlight": "party"
+  },
+  {
+    "word": "provision",
+    "pos": "n.",
+    "ipa": "/prəˈvɪʒn/",
+    "vi": "điều khoản, sự dự phòng",
+    "example": "A new [provision]{điều khoản} was [added]{thêm vào} to [protect]{bảo vệ} [customer data]{dữ liệu khách hàng}.",
+    "exampleVi": "Một điều khoản mới được thêm vào để bảo vệ dữ liệu khách hàng.",
+    "highlight": "provision",
+    "family": [
+      { "pos": "v.", "word": "provide", "vi": "cung cấp, chu cấp" },
+      { "pos": "n.", "word": "provider", "vi": "nhà cung cấp" },
+      { "pos": "n.", "word": "provision", "vi": "sự cung cấp, điều khoản" }
+    ]
+  },
+  {
+    "word": "resolve",
+    "pos": "v.",
+    "ipa": "/rɪˈzɒlv/",
+    "vi": "giải quyết, quyết tâm",
+    "example": "We hope to [resolve]{giải quyết} this [dispute]{tranh chấp} through [mediation]{hòa giải}.",
+    "exampleVi": "Chúng tôi hy vọng giải quyết tranh chấp này thông qua hòa giải.",
+    "highlight": "resolve"
+  },
+  {
+    "word": "specific",
+    "pos": "adj.",
+    "ipa": "/spəˈsɪfɪk/",
+    "vi": "cụ thể, đặc biệt",
+    "example": "Please [specify]{nêu rõ} the [specific terms of payment]{điều khoản thanh toán cụ thể} in the [contract]{hợp đồng}.",
+    "exampleVi": "Vui lòng nêu rõ các điều khoản thanh toán cụ thể trong hợp đồng.",
+    "highlight": "specific",
+    "family": [
+      { "pos": "v.", "word": "specify", "vi": "chỉ rõ, định rõ" },
+      { "pos": "n.", "word": "specification", "vi": "đặc điểm kỹ thuật" },
+      { "pos": "adj.", "word": "specific", "vi": "cụ thể, đặc biệt" }
+    ]
+  }
+]

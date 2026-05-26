@@ -1,0 +1,191 @@
+<div class="flashcard">
+  <!-- Header: stats + controls -->
+  <div class="flashcard__header">
+    <div class="stats">
+      <div class="stat">
+        <span class="stat__num stat__num--fresh">{{ deckStats().fresh }}</span>
+        <span class="stat__label">Mới</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num stat__num--learning">{{ deckStats().learning }}</span>
+        <span class="stat__label">Đang học</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num stat__num--mastered">{{ deckStats().mastered }}</span>
+        <span class="stat__label">Thuộc</span>
+      </div>
+      <div class="stat stat--total">
+        <span class="stat__num">{{ deckStats().total }}</span>
+        <span class="stat__label">Tổng</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button
+        type="button"
+        class="ctrl-btn"
+        (click)="toggleDirection()"
+        [attr.aria-label]="direction() === 'en-vi' ? 'Đổi: VI → EN' : 'Đổi: EN → VI'"
+        [attr.title]="direction() === 'en-vi' ? 'Đổi: VI → EN' : 'Đổi: EN → VI'"
+      >
+        <span class="dir-tag" [class.dir-tag--active]="true">
+          {{ direction() === 'en-vi' ? 'EN→VI' : 'VI→EN' }}
+        </span>
+      </button>
+      <button type="button" class="ctrl-btn" (click)="resetProgress()" title="Reset tiến độ">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 12a9 9 0 0 1 15.5-6.3L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.3L3 16M3 21v-5h5"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="progress-bar" [attr.aria-label]="'Tiến độ phiên học: ' + progressPct() + '%'">
+    <div class="progress-bar__fill" [style.width.%]="progressPct()"></div>
+  </div>
+
+  @if (sessionFinished()) {
+    <!-- ─── Session summary ─── -->
+    <div class="finish">
+      <div class="finish__icon">🎉</div>
+      <h2 class="finish__title">Hoàn thành phiên học!</h2>
+      <p class="finish__text">
+        Đã xem
+        <strong>{{ sessionStats().hard + sessionStats().normal + sessionStats().easy }}</strong> thẻ
+      </p>
+      <div class="finish__stats">
+        <div class="finish-stat finish-stat--hard">
+          <span class="finish-stat__num">{{ sessionStats().hard }}</span>
+          <span class="finish-stat__label">Khó</span>
+        </div>
+        <div class="finish-stat finish-stat--normal">
+          <span class="finish-stat__num">{{ sessionStats().normal }}</span>
+          <span class="finish-stat__label">Bình thường</span>
+        </div>
+        <div class="finish-stat finish-stat--easy">
+          <span class="finish-stat__num">{{ sessionStats().easy }}</span>
+          <span class="finish-stat__label">Dễ</span>
+        </div>
+      </div>
+      <div class="finish__buttons">
+        <button type="button" class="btn btn--primary" (click)="startSession()">
+          Học tiếp
+        </button>
+        <button type="button" class="btn btn--ghost" (click)="startFullReview()">
+          Ôn tất cả (kể cả đã thuộc)
+        </button>
+      </div>
+    </div>
+  } @else if (currentCard()) {
+    <!-- ─── Flashcard ─── -->
+    <div
+      class="card"
+      [class.is-revealed]="revealed()"
+      tabindex="0"
+      role="button"
+      [attr.aria-label]="revealed() ? 'Đã hiện đáp án' : 'Click để hiện đáp án'"
+      (click)="reveal()"
+      (keydown.enter)="reveal()"
+    >
+      <!-- Front -->
+      <div class="card__face card__face--front">
+        <p class="card__hint">Thẻ {{ cardIndex() + 1 }} / {{ totalInSession() }}</p>
+        <div class="card__word">
+          {{ direction() === 'en-vi' ? currentCard().word : currentCard().vi }}
+        </div>
+        <p class="card__cta">Click hoặc <kbd>Space</kbd> để xem đáp án</p>
+      </div>
+
+      <!-- Back -->
+      <div class="card__face card__face--back">
+        <div class="card__head">
+          <h3 class="card__back-word">{{ currentCard().word }}</h3>
+          <button
+            type="button"
+            class="speaker-btn"
+            (click)="speakWord($event)"
+            [class.is-speaking]="tts.isSpeaking(currentCard().word)"
+            aria-label="Đọc từ"
+          >
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+              />
+            </svg>
+          </button>
+        </div>
+        @if (currentCard().ipa) {
+          <p class="card__ipa">{{ currentCard().ipa }}</p>
+        }
+        <p class="card__vi">{{ currentCard().vi }}</p>
+        @if (currentCard().example) {
+          <p class="card__example">
+            <app-tooltip-text [text]="currentCard().example!" [highlight]="currentCard().word" />
+          </p>
+        }
+      </div>
+    </div>
+
+    <!-- Rating buttons -->
+    @if (revealed()) {
+      <div class="ratings">
+        <button
+          type="button"
+          class="rate-btn rate-btn--hard"
+          (click)="rate('hard')"
+          title="Phím tắt: 1"
+        >
+          <span class="rate-btn__icon">❌</span>
+          <span class="rate-btn__label">Khó</span>
+          <kbd class="rate-btn__kbd">1</kbd>
+        </button>
+        <button
+          type="button"
+          class="rate-btn rate-btn--normal"
+          (click)="rate('normal')"
+          title="Phím tắt: 2"
+        >
+          <span class="rate-btn__icon">😐</span>
+          <span class="rate-btn__label">Bình thường</span>
+          <kbd class="rate-btn__kbd">2</kbd>
+        </button>
+        <button
+          type="button"
+          class="rate-btn rate-btn--easy"
+          (click)="rate('easy')"
+          title="Phím tắt: 3"
+        >
+          <span class="rate-btn__icon">✅</span>
+          <span class="rate-btn__label">Dễ</span>
+          <kbd class="rate-btn__kbd">3</kbd>
+        </button>
+      </div>
+    } @else {
+      <div class="hint">
+        💡 Thử nhớ nghĩa, rồi click để check. Đánh giá <strong>Dễ</strong> → thẻ vào hộp ít gặp;
+        <strong>Khó</strong> → quay lại hộp 1.
+      </div>
+    }
+  } @else {
+    <!-- No cards left to study -->
+    <div class="finish">
+      <div class="finish__icon">🏆</div>
+      <h2 class="finish__title">Bạn đã thuộc tất cả!</h2>
+      <p class="finish__text">
+        Tất cả {{ deckStats().total }} thẻ đều ở hộp 5 (mastered).
+      </p>
+      <button type="button" class="btn btn--ghost" (click)="startFullReview()">
+        Ôn lại để giữ trí nhớ
+      </button>
+    </div>
+  }
+</div>

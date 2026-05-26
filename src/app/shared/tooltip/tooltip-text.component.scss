@@ -1,0 +1,47 @@
+@use '../../../styles/tokens' as *;
+
+:host {
+  display: inline;
+}
+
+.wt-mark {
+  cursor: help;
+  border-bottom: 1.5px dotted var(--color-primary);
+  color: inherit;
+  font-style: inherit;
+  transition: background 0.15s ease, color 0.15s ease;
+  border-radius: var(--rounded-sm);
+  padding: 0 2px;
+
+  &:hover,
+  &:focus {
+    background: var(--color-primary-soft);
+    color: var(--color-primary-strong);
+    outline: none;
+  }
+}
+
+.wt-mark--highlight {
+  background: var(--color-accent);
+  color: var(--color-neutral-900);
+  border-bottom-color: transparent;
+  font-style: normal;
+  padding: 1px 4px;
+
+  &:hover,
+  &:focus {
+    background: var(--color-accent);
+    color: var(--color-neutral-900);
+    filter: brightness(0.95);
+  }
+}
+
+// Auto-matched (from COMMON_DICT) — subtler than manual markup
+.wt-mark--auto {
+  border-bottom: 1px dashed var(--color-neutral-400);
+
+  &:hover,
+  &:focus {
+    border-bottom-color: var(--color-primary);
+  }
+}

@@ -1,0 +1,24 @@
+// Mobile-first breakpoints. Use mixins everywhere — never hardcode media queries.
+// Sync with docs/CONVENTIONS.md section 8.
+
+$bp-md: 640px;   // small tablet / large phone landscape
+$bp-lg: 1024px;  // desktop — sidebar becomes persistent
+
+@mixin media-md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+// Reverse helpers for cases where mobile-only override is clearer
+@mixin media-below-lg {
+  @media (max-width: ($bp-lg - 1px)) {
+    @content;
+  }
+}
