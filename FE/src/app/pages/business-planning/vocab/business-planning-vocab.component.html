@@ -1,0 +1,119 @@
+<app-page-head
+  eyebrow="Lesson 4 · Business Planning"
+  title="Từ vựng"
+  [subtitle]="vocab.length + ' từ vựng cốt lõi — 600 từ vựng TOEIC, bài 4: Lập kế hoạch kinh doanh (Mun English).'"
+/>
+
+<div class="tabs" role="tablist">
+  <button
+    type="button"
+    role="tab"
+    class="tab"
+    [class.is-active]="activeTab() === 'vocab'"
+    [attr.aria-selected]="activeTab() === 'vocab'"
+    (click)="activeTab.set('vocab')"
+  >
+    Từ vựng
+  </button>
+  <button
+    type="button"
+    role="tab"
+    class="tab"
+    [class.is-active]="activeTab() === 'listen'"
+    [attr.aria-selected]="activeTab() === 'listen'"
+    (click)="activeTab.set('listen')"
+  >
+    Nghe danh sách
+  </button>
+  <button
+    type="button"
+    role="tab"
+    class="tab"
+    [class.is-active]="activeTab() === 'flashcard'"
+    [attr.aria-selected]="activeTab() === 'flashcard'"
+    (click)="activeTab.set('flashcard')"
+  >
+    Flashcard
+  </button>
+</div>
+
+@switch (activeTab()) {
+  @case ('vocab') {
+    <ul class="vocab-list">
+      @for (v of vocab; track v.word) {
+        <li class="vocab-card">
+          <div class="vocab-card__head">
+            <h2 class="vocab-card__word">{{ v.word }}</h2>
+            <span class="vocab-card__pos">{{ v.pos }}</span>
+            <app-icon-button
+              class="vocab-card__speaker"
+              [active]="tts.isSpeaking(v.word)"
+              [pulse]="tts.isSpeaking(v.word)"
+              [ariaLabel]="'Đọc từ ' + v.word + ' (giọng Mỹ)'"
+              hoverTitle="Đọc (en-US)"
+              (click)="tts.speak(v.word)"
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+                />
+              </svg>
+            </app-icon-button>
+          </div>
+          <p class="vocab-card__ipa">{{ v.ipa }}</p>
+          <p class="vocab-card__vi">{{ v.vi }}</p>
+
+          <div class="vocab-card__ex">
+            @if (isTranslated(v.word)) {
+              <span class="vocab-card__sentence vocab-card__sentence--vi">
+                {{ v.exampleVi }}
+              </span>
+            } @else {
+              <span class="vocab-card__sentence">
+                <app-tooltip-text [text]="v.example" [highlight]="v.highlight" />
+              </span>
+            }
+            <app-icon-button
+              [active]="isTranslated(v.word)"
+              [ariaLabel]="isTranslated(v.word) ? 'Xem tiếng Anh' : 'Dịch sang tiếng Việt'"
+              [hoverTitle]="isTranslated(v.word) ? 'Xem tiếng Anh' : 'Dịch sang tiếng Việt'"
+              (click)="toggleTranslate(v.word)"
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
+                />
+              </svg>
+            </app-icon-button>
+          </div>
+
+          @if (v.family && v.family.length) {
+            <div class="vocab-card__family">
+              <p class="vocab-card__family-title">Họ từ</p>
+              <ul class="vocab-card__family-list">
+                @for (f of v.family; track f.word) {
+                  <li class="family-chip">
+                    <span class="family-chip__pos">{{ f.pos }}</span>
+                    <strong class="family-chip__word">{{ f.word }}</strong>
+                    <span class="family-chip__vi">{{ f.vi }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+        </li>
+      }
+    </ul>
+  }
+  @case ('listen') {
+    <app-vocab-listen [items]="listenItems()" />
+  }
+  @case ('flashcard') {
+    <app-vocab-flashcard
+      [items]="flashcardItems()"
+      deckId="business-planning-lesson-4"
+    />
+  }
+}

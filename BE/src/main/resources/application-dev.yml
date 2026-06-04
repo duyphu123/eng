@@ -1,0 +1,68 @@
+spring:
+    profiles:
+        name: Development
+    environment:
+        active:
+            folder: env
+            file: .env.dev
+    jpa:
+        open-in-view: false
+        hibernate:
+            ddl-auto: none
+        show-sql: false
+        properties:
+            hibernate:
+                format_sql: false
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        driverClassName: org.mariadb.jdbc.Driver
+        hikari:
+            pool-name: datasource-pool-mariadb
+            maximum-pool-size: 50
+            minimum-idle: 10
+            idle-timeout: 100000 # 1 phút 40 giây
+            max-lifetime: 200000 # 3 phút 20 giây
+            keepalive-time: 60000 # 1 phút
+            validation-timeout: 3000
+            connection-timeout: 30000
+            connection-test-query: SELECT 1
+logging:
+    level:
+        org:
+            hibernate:
+                SQL: TRACE
+                type:
+                    descriptor:
+                        sql:
+                            BasicBinder: DEBUG
+            springframework:
+                jdbc:
+                    core:
+                        JdbcTemplate: TRACE
+                        StatementCreatorUtils: TRACE
+                data:
+                    redis:
+                        core: DEBUG
+                        repository:
+                            configuration: DEBUG
+        com.netflix.eureka: OFF
+        com.netflix.discovery: OFF
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8210/eureka
+ws:
+    address:
+        profile:
+            name: profile-service
+            url: http://100.99.3.191:8060
+            path: /api/profile-cab-service
+        catalog:
+            name: catalog-service
+            url: http://100.99.3.191:8060
+#            url: http://localhost:8055
+            path: /api/catalog-cab-service
+        file:
+            name: cab-file-service
+            url: http://100.99.3.191:8060
+            path: /api/cab-file-service

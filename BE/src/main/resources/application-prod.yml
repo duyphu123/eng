@@ -1,0 +1,65 @@
+spring:
+    profiles:
+        name: Production
+    environment:
+        active:
+            folder: env
+            file: .env.prod
+    jpa:
+        open-in-view: false
+        hibernate:
+            ddl-auto: none
+        show-sql: false
+        properties:
+            hibernate:
+                format_sql: false
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        driverClassName: org.mariadb.jdbc.Driver
+        hikari:
+            pool-name: datasource-pool-mariadb
+            maximum-pool-size: 40
+            minimum-idle: 10
+            idle-timeout: 600000            # 10 phút
+            max-lifetime: 1800000           # 30 phút
+            keepalive-time: 300000          # 5 phút
+            validation-timeout: 3000
+            connection-timeout: 30000
+            connection-test-query: SELECT 1
+logging:
+    level:
+        org:
+            hibernate:
+                SQL: OFF
+                type:
+                    descriptor:
+                        sql:
+                            BasicBinder: OFF
+            springframework:
+                jdbc:
+                    core:
+                        JdbcTemplate: ERROR
+                        StatementCreatorUtils: ERROR
+                data:
+                    redis:
+                        core: ERROR
+                        repository:
+                            configuration: ERROR
+eureka:
+    client:
+        service-url:
+            defaultZone: http://eureka_slms:eureka_slms@100.99.3.181:8211/eureka/,http://eureka_slms:eureka_slms@100.99.3.182:8211/eureka/,http://eureka_slms:eureka_slms@100.99.3.183:8211/eureka/,http://eureka_slms:eureka_slms@100.99.3.184:8211/eureka/
+#            defaultZone: http://eureka_slms:eureka_slms@100.99.3.181:8210/eureka/,http://eureka_slms:eureka_slms@100.99.3.182:8210/eureka/,http://eureka_slms:eureka_slms@100.99.3.183:8210/eureka/,http://eureka_slms:eureka_slms@100.99.3.184:8210/eureka/
+ws:
+    address:
+        profile:
+            name: profile-cab-service
+            #            url: http://100.99.3.181:8050
+            path: /api/profile-cab-service
+        catalog:
+            name: catalog-cab-service
+            #            url: http://100.99.3.181:8050
+            path: /api/catalog-cab-service
+        file:
+            name: cab-file-service
+            path: /api/cab-file-service

@@ -1,27 +1,45 @@
-# EngToeic
+# eng — Monorepo (Frontend + Backend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Một repo Git duy nhất chứa cả frontend và backend của dự án **EngToeic** (ứng dụng học từ vựng & luyện nghe TOEIC).
 
-## Development server
+## Cấu trúc
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```
+eng/
+├── FE/        Frontend — Angular 17 (app TOEIC)
+├── BE/        Backend  — Spring Boot (API)   ← sẽ thêm
+├── .github/   CI/CD dùng chung (GitHub Actions, deploy Pages)
+└── .gitignore .editorconfig  — cấu hình cấp workspace
+```
 
-## Code scaffolding
+> Mỗi app tự quản lý dependency, build và `CLAUDE.md` riêng. Đây là **1 repo Git** ở gốc — mọi thứ push chung lên `github.com/duyphu123/eng`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Chạy Frontend
 
-## Build
+```bash
+cd FE
+npm install
+npm start            # ng serve → http://localhost:4200
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Chạy Backend
 
-## Running unit tests
+```bash
+cd BE
+./mvnw spring-boot:run   # (sau khi tạo skeleton Spring Boot, port 8080)
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Làm việc với Claude Code
 
-## Running end-to-end tests
+Mở terminal riêng cho từng phần — mỗi session tự nạp `CLAUDE.md` của thư mục đó (gộp với rule gốc):
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+cd FE && claude     # tập trung frontend
+cd BE && claude     # tập trung backend
+claude              # ở gốc: việc xuyên suốt cả 2 (vd: API contract)
+```
 
-## Further help
+## Deploy
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **FE** → GitHub Pages tự động qua `.github/workflows/deploy-pages.yml` (mỗi lần push lên `main`).
+- **BE** → triển khai riêng (server / Render / Railway…), không qua GitHub Pages.

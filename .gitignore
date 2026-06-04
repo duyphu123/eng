@@ -1,50 +1,60 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# ============================================================
+#  Monorepo root .gitignore  (covers FE + BE)
+#  Patterns WITHOUT a leading slash match at ANY depth —
+#  e.g. `node_modules/` also matches `FE/node_modules/`.
+#  Each app may keep its own .gitignore for extra rules.
+# ============================================================
 
-# Compiled output
-/dist
-/tmp
+# ---- Dependencies ----
+node_modules/
+
+# ---- Build output (FE) ----
+dist/
 /out-tsc
-/bazel-out
-
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
-
-# IDEs and editors
-.idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# Miscellaneous
-/.angular/cache
+/tmp
+.angular/cache/
 .sass-cache/
-/connect.lock
 /coverage
-/libpeerconnection.log
-testem.log
-/typings
 
-# System files
-.DS_Store
-Thumbs.db
+# ---- Backend: Spring Boot (Maven / Gradle) ----
+target/
+build/
+*.class
+hs_err_pid*
+replay_pid*
 
-# Claude Code — user-specific overrides (project-level settings.json is OK to commit)
-.claude/settings.local.json
-
-# Env files — never commit secrets
+# ---- Env / secrets ----
 .env
 .env.*
 !.env.example
+
+# ---- IDE / editor ----
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.history/
+
+# ---- Claude Code (machine-specific overrides) ----
+**/.claude/settings.local.json
+
+# ---- GitNexus (machine-specific index + MCP config) ----
+.gitnexus/
+.mcp.json
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+yarn-error.log

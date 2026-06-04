@@ -1,0 +1,71 @@
+<app-page-head
+  eyebrow="Lesson 3 · Warranties"
+  [title]="passage.title"
+  [subtitle]="passage.titleVi"
+/>
+
+<section class="passage">
+  <div class="passage__player">
+    <button
+      type="button"
+      class="play-btn"
+      [class.is-playing]="isPlaying()"
+      (click)="togglePlay()"
+    >
+      @if (isPlaying()) {
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <rect x="6" y="5" width="4" height="14" fill="currentColor" rx="1" />
+          <rect x="14" y="5" width="4" height="14" fill="currentColor" rx="1" />
+        </svg>
+        <span>Dừng</span>
+      } @else {
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="currentColor" d="M8 5v14l11-7z" />
+        </svg>
+        <span>Nghe đoạn văn</span>
+      }
+    </button>
+
+    <div class="player-meta">
+      <p class="player-meta__line">
+        Giọng đọc <strong>Aria Neural</strong> (Microsoft) — pre-recorded.
+      </p>
+      <p class="player-meta__line player-meta__line--muted">
+        Hover/tap vào từ bôi đậm để xem nghĩa.
+      </p>
+    </div>
+
+    <button
+      type="button"
+      class="vi-toggle"
+      [class.is-open]="showVi()"
+      [attr.aria-pressed]="showVi()"
+      (click)="toggleVi()"
+    >
+      <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 7h14M5 12h14M5 17h10"
+        />
+      </svg>
+      <span>{{ showVi() ? 'Ẩn bản dịch' : 'Hiện bản dịch' }}</span>
+    </button>
+  </div>
+
+  <article class="passage__body" [class.has-vi]="showVi()">
+    @for (s of sentences; track $index) {
+      <div class="sentence" [class.sentence--with-vi]="showVi()">
+        <p class="sentence__en">
+          <app-tooltip-text [text]="s.en" />
+        </p>
+        @if (showVi()) {
+          <p class="sentence__vi">{{ s.vi }}</p>
+        }
+      </div>
+    }
+  </article>
+</section>

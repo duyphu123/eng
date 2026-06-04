@@ -1,0 +1,155 @@
+[
+  {
+    "word": "attract",
+    "pos": "v.",
+    "ipa": "/əˈtrækt/",
+    "vi": "thu hút, lôi cuốn",
+    "example": "The new [ad campaign]{chiến dịch quảng cáo} is designed to [attract]{thu hút} [young customers]{khách hàng trẻ}.",
+    "exampleVi": "Chiến dịch quảng cáo mới được thiết kế để thu hút khách hàng trẻ.",
+    "highlight": "attract",
+    "family": [
+      { "pos": "v.", "word": "attract", "vi": "thu hút, lôi cuốn" },
+      { "pos": "n.", "word": "attraction", "vi": "sự thu hút, sức hấp dẫn" },
+      { "pos": "adj.", "word": "attractive", "vi": "hấp dẫn, lôi cuốn" }
+    ]
+  },
+  {
+    "word": "compare",
+    "pos": "v.",
+    "ipa": "/kəmˈpeə(r)/",
+    "vi": "so sánh",
+    "example": "[Shoppers]{người mua sắm} often [compare]{so sánh} [prices]{giá cả} before making a [purchase]{quyết định mua}.",
+    "exampleVi": "Người mua sắm thường so sánh giá cả trước khi quyết định mua.",
+    "highlight": "compare",
+    "family": [
+      { "pos": "v.", "word": "compare", "vi": "so sánh" },
+      { "pos": "n.", "word": "comparison", "vi": "sự so sánh" },
+      { "pos": "adj.", "word": "comparable", "vi": "có thể so sánh được, tương đương" }
+    ]
+  },
+  {
+    "word": "competition",
+    "pos": "n.",
+    "ipa": "/ˌkɒmpəˈtɪʃn/",
+    "vi": "sự cạnh tranh, cuộc thi",
+    "example": "[Our brand]{thương hiệu của chúng tôi} faces strong [competition]{sự cạnh tranh} from [overseas suppliers]{nhà cung cấp nước ngoài}.",
+    "exampleVi": "Thương hiệu của chúng tôi đối mặt với sự cạnh tranh mạnh từ các nhà cung cấp nước ngoài.",
+    "highlight": "competition",
+    "family": [
+      { "pos": "v.", "word": "compete", "vi": "cạnh tranh, thi đấu" },
+      { "pos": "n.", "word": "competition", "vi": "sự cạnh tranh, cuộc thi" },
+      { "pos": "adj.", "word": "competitive", "vi": "có tính cạnh tranh" }
+    ]
+  },
+  {
+    "word": "consume",
+    "pos": "v.",
+    "ipa": "/kənˈsjuːm/",
+    "vi": "tiêu thụ, sử dụng",
+    "example": "[Young people]{giới trẻ} [consume]{tiêu thụ} more [online content]{nội dung trực tuyến} than [traditional media]{truyền thông truyền thống}.",
+    "exampleVi": "Giới trẻ tiêu thụ nội dung trực tuyến nhiều hơn truyền thông truyền thống.",
+    "highlight": "consume",
+    "family": [
+      { "pos": "v.", "word": "consume", "vi": "tiêu thụ, sử dụng" },
+      { "pos": "n.", "word": "consumer", "vi": "người tiêu dùng" },
+      { "pos": "adj.", "word": "consumable", "vi": "có thể tiêu thụ được" }
+    ]
+  },
+  {
+    "word": "convince",
+    "pos": "v.",
+    "ipa": "/kənˈvɪns/",
+    "vi": "thuyết phục",
+    "example": "[Free samples]{hàng dùng thử} can [convince]{thuyết phục} customers to [try]{thử} a new [product]{sản phẩm}.",
+    "exampleVi": "Hàng dùng thử có thể thuyết phục khách hàng dùng thử một sản phẩm mới.",
+    "highlight": "convince"
+  },
+  {
+    "word": "currently",
+    "pos": "adv.",
+    "ipa": "/ˈkʌrəntli/",
+    "vi": "hiện tại, hiện nay",
+    "example": "We are [currently]{hiện đang} [running]{triển khai} a [promotion]{chương trình khuyến mãi} on [seasonal items]{mặt hàng theo mùa}.",
+    "exampleVi": "Chúng tôi hiện đang triển khai một chương trình khuyến mãi cho các mặt hàng theo mùa.",
+    "highlight": "currently"
+  },
+  {
+    "word": "fad",
+    "pos": "n.",
+    "ipa": "/fæd/",
+    "vi": "mốt nhất thời, trào lưu",
+    "example": "Many [trends]{xu hướng} turn out to be just a [passing fad]{mốt nhất thời}.",
+    "exampleVi": "Nhiều xu hướng hóa ra chỉ là một mốt nhất thời.",
+    "highlight": "fad"
+  },
+  {
+    "word": "inspiration",
+    "pos": "n.",
+    "ipa": "/ˌɪnspəˈreɪʃn/",
+    "vi": "nguồn cảm hứng, sự truyền cảm hứng",
+    "example": "[Customer feedback]{phản hồi của khách hàng} is a great [inspiration]{nguồn cảm hứng} for [product design]{thiết kế sản phẩm}.",
+    "exampleVi": "Phản hồi của khách hàng là một nguồn cảm hứng tuyệt vời cho việc thiết kế sản phẩm.",
+    "highlight": "inspiration",
+    "family": [
+      { "pos": "v.", "word": "inspire", "vi": "truyền cảm hứng" },
+      { "pos": "n.", "word": "inspiration", "vi": "nguồn cảm hứng" },
+      { "pos": "adj.", "word": "inspirational", "vi": "đầy cảm hứng" }
+    ]
+  },
+  {
+    "word": "market",
+    "pos": "n./v.",
+    "ipa": "/ˈmɑːkɪt/",
+    "vi": "thị trường; tiếp thị, bán hàng",
+    "example": "The company plans to [market]{tiếp thị} its [premium line]{dòng sản phẩm cao cấp} to the [Asian market]{thị trường châu Á}.",
+    "exampleVi": "Công ty dự định tiếp thị dòng sản phẩm cao cấp tới thị trường châu Á.",
+    "highlight": "market",
+    "family": [
+      { "pos": "v.", "word": "market", "vi": "tiếp thị, bán hàng" },
+      { "pos": "n.", "word": "marketing", "vi": "hoạt động tiếp thị" },
+      { "pos": "adj.", "word": "marketable", "vi": "có thể bán được, dễ bán" }
+    ]
+  },
+  {
+    "word": "persuasion",
+    "pos": "n.",
+    "ipa": "/pəˈsweɪʒn/",
+    "vi": "sự thuyết phục, khả năng thuyết phục",
+    "example": "[Skillful persuasion]{khả năng thuyết phục khéo léo} is essential in [sales]{bán hàng} and [negotiation]{đàm phán}.",
+    "exampleVi": "Khả năng thuyết phục khéo léo là điều cần thiết trong bán hàng và đàm phán.",
+    "highlight": "persuasion",
+    "family": [
+      { "pos": "v.", "word": "persuade", "vi": "thuyết phục" },
+      { "pos": "n.", "word": "persuasion", "vi": "sự thuyết phục" },
+      { "pos": "adj.", "word": "persuasive", "vi": "có tính thuyết phục" }
+    ]
+  },
+  {
+    "word": "productive",
+    "pos": "adj.",
+    "ipa": "/prəˈdʌktɪv/",
+    "vi": "năng suất, hiệu quả",
+    "example": "[Short meetings]{họp ngắn} are usually more [productive]{hiệu quả} than [long ones]{những cuộc họp dài}.",
+    "exampleVi": "Các cuộc họp ngắn thường hiệu quả hơn các cuộc họp dài.",
+    "highlight": "productive",
+    "family": [
+      { "pos": "v.", "word": "produce", "vi": "sản xuất, tạo ra" },
+      { "pos": "n.", "word": "productivity", "vi": "năng suất" },
+      { "pos": "adj.", "word": "productive", "vi": "năng suất, hiệu quả" }
+    ]
+  },
+  {
+    "word": "satisfaction",
+    "pos": "n.",
+    "ipa": "/ˌsætɪsˈfækʃn/",
+    "vi": "sự hài lòng, sự thỏa mãn",
+    "example": "[Customer satisfaction]{sự hài lòng của khách hàng} is our top [priority]{ưu tiên}.",
+    "exampleVi": "Sự hài lòng của khách hàng là ưu tiên hàng đầu của chúng tôi.",
+    "highlight": "satisfaction",
+    "family": [
+      { "pos": "v.", "word": "satisfy", "vi": "làm hài lòng, đáp ứng" },
+      { "pos": "n.", "word": "satisfaction", "vi": "sự hài lòng, sự thỏa mãn" },
+      { "pos": "adj.", "word": "satisfactory", "vi": "thỏa đáng, vừa ý" }
+    ]
+  }
+]

@@ -1,0 +1,174 @@
+[
+  {
+    "word": "characteristic",
+    "pos": "adj./n.",
+    "ipa": "/ˌkærəktəˈrɪstɪk/",
+    "vi": "đặc trưng; đặc điểm",
+    "example": "The [timing belt]{dây curoa cam} [characteristically]{một cách đặc trưng} [shows signs of wear]{có dấu hiệu hao mòn} after about [180,000 miles]{180.000 dặm}.",
+    "exampleVi": "Dây curoa cam thường có dấu hiệu hao mòn một cách đặc trưng sau khoảng 180.000 dặm.",
+    "highlight": "characteristic",
+    "family": [
+      { "pos": "n.", "word": "character", "vi": "tính cách, đặc tính" },
+      { "pos": "v.", "word": "characterize", "vi": "đặc trưng hóa, mô tả" },
+      { "pos": "adj.", "word": "characteristic", "vi": "đặc trưng, tiêu biểu" },
+      { "pos": "adv.", "word": "characteristically", "vi": "một cách đặc trưng" }
+    ]
+  },
+  {
+    "word": "consider",
+    "pos": "v.",
+    "ipa": "/kənˈsɪdə(r)/",
+    "vi": "cân nhắc, xem xét",
+    "example": "We will only [consider]{cân nhắc} [purchasing]{mua} [appliances]{thiết bị} that come with a [money-back guarantee]{cam kết hoàn tiền}.",
+    "exampleVi": "Chúng tôi sẽ chỉ cân nhắc việc mua các thiết bị đi kèm với cam kết hoàn tiền.",
+    "highlight": "consider",
+    "family": [
+      { "pos": "v.", "word": "consider", "vi": "cân nhắc, xem xét" },
+      { "pos": "n.", "word": "consideration", "vi": "sự cân nhắc" },
+      { "pos": "adj.", "word": "considerable", "vi": "đáng kể" },
+      { "pos": "adj.", "word": "considerate", "vi": "chu đáo, ân cần" }
+    ]
+  },
+  {
+    "word": "defective",
+    "pos": "adj.",
+    "ipa": "/dɪˈfektɪv/",
+    "vi": "bị lỗi, có khuyết điểm",
+    "example": "The [manufacturer]{nhà sản xuất} will [repair]{sửa chữa} any [defective product]{sản phẩm bị lỗi} within the [warranty period]{thời hạn bảo hành}.",
+    "exampleVi": "Nhà sản xuất sẽ sửa chữa bất kỳ sản phẩm bị lỗi nào trong thời hạn bảo hành.",
+    "highlight": "defective",
+    "family": [
+      { "pos": "n.", "word": "defect", "vi": "khiếm khuyết, lỗi" },
+      { "pos": "adj.", "word": "defective", "vi": "bị lỗi, khiếm khuyết" },
+      { "pos": "adv.", "word": "defectively", "vi": "một cách khiếm khuyết" }
+    ]
+  },
+  {
+    "word": "expire",
+    "pos": "v.",
+    "ipa": "/ɪkˈspaɪə(r)/",
+    "vi": "hết hạn",
+    "example": "This [warranty]{bảo hành} will [expire]{hết hạn} one year from the [date of purchase]{ngày mua hàng}.",
+    "exampleVi": "Bảo hành này sẽ hết hạn một năm kể từ ngày mua hàng.",
+    "highlight": "expire",
+    "family": [
+      { "pos": "v.", "word": "expire", "vi": "hết hạn" },
+      { "pos": "n.", "word": "expiration", "vi": "sự hết hạn" },
+      { "pos": "adj.", "word": "expired", "vi": "đã hết hạn" }
+    ]
+  },
+  {
+    "word": "frequently",
+    "pos": "adv.",
+    "ipa": "/ˈfriːkwəntli/",
+    "vi": "thường xuyên",
+    "example": "Our [loyal customers]{khách hàng trung thành} [frequently]{thường xuyên} [recommend]{giới thiệu} our [products]{sản phẩm} to their [friends]{bạn bè}.",
+    "exampleVi": "Khách hàng trung thành của chúng tôi thường xuyên giới thiệu sản phẩm tới bạn bè.",
+    "highlight": "frequently",
+    "family": [
+      { "pos": "adj.", "word": "frequent", "vi": "thường xuyên, hay xảy ra" },
+      { "pos": "n.", "word": "frequency", "vi": "tần suất" },
+      { "pos": "adv.", "word": "frequently", "vi": "thường xuyên" }
+    ]
+  },
+  {
+    "word": "imply",
+    "pos": "v.",
+    "ipa": "/ɪmˈplaɪ/",
+    "vi": "ngụ ý, ám chỉ",
+    "example": "The [warranty]{bảo hành} does not [imply]{ngụ ý} that the [purchaser]{người mua} has [additional rights]{quyền lợi bổ sung}.",
+    "exampleVi": "Bảo hành không ngụ ý rằng người mua có quyền lợi bổ sung.",
+    "highlight": "imply",
+    "family": [
+      { "pos": "v.", "word": "imply", "vi": "ngụ ý, ám chỉ" },
+      { "pos": "adj.", "word": "implicit", "vi": "ngầm hiểu, không nói rõ" },
+      { "pos": "n.", "word": "implication", "vi": "sự ngụ ý, hệ quả" }
+    ]
+  },
+  {
+    "word": "protect",
+    "pos": "v.",
+    "ipa": "/prəˈtekt/",
+    "vi": "bảo vệ",
+    "example": "This [warranty]{bảo hành} [protects]{bảo vệ} the [purchaser]{người mua} from all [malfunctions]{sự cố hỏng hóc} due to [defects in materials]{lỗi vật liệu}.",
+    "exampleVi": "Bảo hành này bảo vệ người mua khỏi mọi sự cố hỏng hóc do lỗi vật liệu.",
+    "highlight": "protect",
+    "family": [
+      { "pos": "v.", "word": "protect", "vi": "bảo vệ" },
+      { "pos": "n.", "word": "protection", "vi": "sự bảo vệ" },
+      { "pos": "adj.", "word": "protective", "vi": "có tính bảo vệ" },
+      { "pos": "n.", "word": "protector", "vi": "người/thiết bị bảo vệ" }
+    ]
+  },
+  {
+    "word": "refund",
+    "pos": "n./v.",
+    "ipa": "/ˈriːfʌnd/",
+    "vi": "sự hoàn tiền; hoàn tiền",
+    "example": "The [customer]{khách hàng} [returned]{trả lại} the [defective]{bị lỗi} item and asked for a [full refund]{hoàn tiền đầy đủ}.",
+    "exampleVi": "Khách hàng đã trả lại món hàng bị lỗi và yêu cầu hoàn tiền đầy đủ.",
+    "highlight": "refund",
+    "family": [
+      { "pos": "v.", "word": "refund", "vi": "hoàn tiền" },
+      { "pos": "n.", "word": "refund", "vi": "khoản hoàn tiền" },
+      { "pos": "adj.", "word": "refundable", "vi": "có thể hoàn tiền" }
+    ]
+  },
+  {
+    "word": "refurbish",
+    "pos": "v.",
+    "ipa": "/ˌriːˈfɜːbɪʃ/",
+    "vi": "tân trang, làm mới",
+    "example": "We will send you a [refurbished]{đã được tân trang} [toaster]{máy nướng bánh mì} in [exchange for]{để đổi lấy} the [defective one]{cái bị lỗi}.",
+    "exampleVi": "Chúng tôi sẽ gửi cho bạn một chiếc máy nướng bánh mì đã được tân trang để đổi lấy cái bị lỗi.",
+    "highlight": "refurbish",
+    "family": [
+      { "pos": "v.", "word": "refurbish", "vi": "tân trang, làm mới" },
+      { "pos": "adj.", "word": "refurbished", "vi": "đã được tân trang" },
+      { "pos": "n.", "word": "refurbishment", "vi": "sự tân trang" }
+    ]
+  },
+  {
+    "word": "reputation",
+    "pos": "n.",
+    "ipa": "/ˌrepjuˈteɪʃn/",
+    "vi": "uy tín, danh tiếng",
+    "example": "It is helpful to consider the [reputation]{uy tín} of the [manufacturer]{nhà sản xuất} when [making a major purchase]{thực hiện giao dịch mua bán lớn}.",
+    "exampleVi": "Việc xem xét uy tín của nhà sản xuất rất hữu ích khi thực hiện giao dịch mua bán lớn.",
+    "highlight": "reputation",
+    "family": [
+      { "pos": "n.", "word": "reputation", "vi": "uy tín, danh tiếng" },
+      { "pos": "adj.", "word": "reputable", "vi": "có uy tín" },
+      { "pos": "adj.", "word": "reputed", "vi": "được cho là, nổi tiếng" }
+    ]
+  },
+  {
+    "word": "require",
+    "pos": "v.",
+    "ipa": "/rɪˈkwaɪə(r)/",
+    "vi": "yêu cầu, đòi hỏi",
+    "example": "A [receipt]{biên lai} or other [proof of purchase]{bằng chứng mua hàng} is [required]{cần có} to [make claims]{yêu cầu bồi thường}.",
+    "exampleVi": "Cần có biên lai hoặc bằng chứng mua hàng khác để yêu cầu bồi thường.",
+    "highlight": "require",
+    "family": [
+      { "pos": "v.", "word": "require", "vi": "yêu cầu, đòi hỏi" },
+      { "pos": "n.", "word": "requirement", "vi": "yêu cầu, điều kiện" },
+      { "pos": "adj.", "word": "required", "vi": "bắt buộc, được yêu cầu" },
+      { "pos": "adj.", "word": "requisite", "vi": "cần thiết, thiết yếu" }
+    ]
+  },
+  {
+    "word": "warranty",
+    "pos": "n.",
+    "ipa": "/ˈwɒrənti/",
+    "vi": "bảo hành, sự đảm bảo",
+    "example": "The [one-year warranty]{bảo hành một năm} on the [appliance]{thiết bị} [expired]{hết hạn} a [month ago]{một tháng trước}.",
+    "exampleVi": "Bảo hành một năm của thiết bị đã hết hạn một tháng trước.",
+    "highlight": "warranty",
+    "family": [
+      { "pos": "n.", "word": "warranty", "vi": "bảo hành" },
+      { "pos": "v.", "word": "warrant", "vi": "đảm bảo, biện minh" },
+      { "pos": "adj.", "word": "warranted", "vi": "được đảm bảo, có cơ sở" }
+    ]
+  }
+]

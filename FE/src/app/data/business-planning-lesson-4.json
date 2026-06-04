@@ -1,0 +1,150 @@
+[
+  {
+    "word": "address",
+    "pos": "v./n.",
+    "ipa": "/əˈdres/",
+    "vi": "trình bày, đề cập; bài phát biểu",
+    "example": "The [committee]{hội đồng} will [address]{trình bày} the [budget cuts]{cắt giảm ngân sách} in the next [meeting]{cuộc họp}.",
+    "exampleVi": "Hội đồng sẽ trình bày việc cắt giảm ngân sách trong cuộc họp tới.",
+    "highlight": "address"
+  },
+  {
+    "word": "avoid",
+    "pos": "v.",
+    "ipa": "/əˈvɔɪd/",
+    "vi": "tránh, né tránh",
+    "example": "We must [avoid]{tránh} [unnecessary borrowing]{vay mượn không cần thiết} to keep the [company]{công ty} financially [stable]{ổn định}.",
+    "exampleVi": "Chúng ta phải tránh vay mượn không cần thiết để giữ công ty ổn định về tài chính.",
+    "highlight": "avoid",
+    "family": [
+      { "pos": "v.", "word": "avoid", "vi": "tránh, né tránh" },
+      { "pos": "n.", "word": "avoidance", "vi": "sự tránh né" },
+      { "pos": "adj.", "word": "avoidable", "vi": "có thể tránh được" }
+    ]
+  },
+  {
+    "word": "demonstrate",
+    "pos": "v.",
+    "ipa": "/ˈdemənstreɪt/",
+    "vi": "chứng minh, cho thấy rõ",
+    "example": "Our [latest research]{nghiên cứu gần đây} [demonstrates]{chứng minh} a clear [need]{nhu cầu} for [product diversification]{đa dạng hóa sản phẩm}.",
+    "exampleVi": "Nghiên cứu gần đây của chúng tôi chứng minh rõ ràng nhu cầu đa dạng hóa sản phẩm.",
+    "highlight": "demonstrate",
+    "family": [
+      { "pos": "v.", "word": "demonstrate", "vi": "chứng minh, cho thấy rõ" },
+      { "pos": "n.", "word": "demonstration", "vi": "sự chứng minh, sự trình bày" },
+      { "pos": "adj.", "word": "demonstrative", "vi": "hay biểu lộ cảm xúc, có tính chứng minh" }
+    ]
+  },
+  {
+    "word": "develop",
+    "pos": "v.",
+    "ipa": "/dɪˈveləp/",
+    "vi": "phát triển, mở rộng, cải thiện",
+    "example": "Alexa is [developing]{phát triển} a new [business plan]{kế hoạch kinh doanh} for her [startup]{công ty khởi nghiệp}.",
+    "exampleVi": "Alexa đang phát triển một kế hoạch kinh doanh mới cho công ty khởi nghiệp của cô.",
+    "highlight": "develop",
+    "family": [
+      { "pos": "v.", "word": "develop", "vi": "phát triển, mở rộng" },
+      { "pos": "n.", "word": "development", "vi": "sự phát triển, sự mở rộng" },
+      { "pos": "n.", "word": "developer", "vi": "nhà phát triển" }
+    ]
+  },
+  {
+    "word": "evaluate",
+    "pos": "v.",
+    "ipa": "/ɪˈvæljueɪt/",
+    "vi": "đánh giá, định giá",
+    "example": "The [board]{hội đồng quản trị} will [evaluate]{đánh giá} each [proposal]{đề xuất} based on [risk and return]{rủi ro và lợi nhuận}.",
+    "exampleVi": "Hội đồng quản trị sẽ đánh giá từng đề xuất dựa trên rủi ro và lợi nhuận.",
+    "highlight": "evaluate",
+    "family": [
+      { "pos": "v.", "word": "evaluate", "vi": "đánh giá, định giá" },
+      { "pos": "n.", "word": "evaluation", "vi": "sự đánh giá" },
+      { "pos": "n.", "word": "evaluator", "vi": "người đánh giá" }
+    ]
+  },
+  {
+    "word": "gather",
+    "pos": "v.",
+    "ipa": "/ˈɡæðə(r)/",
+    "vi": "thu thập, tập hợp",
+    "example": "Before [making decisions]{ra quyết định}, the team must [gather]{thu thập} reliable [market data]{dữ liệu thị trường}.",
+    "exampleVi": "Trước khi ra quyết định, đội nhóm phải thu thập dữ liệu thị trường đáng tin cậy.",
+    "highlight": "gather"
+  },
+  {
+    "word": "offer",
+    "pos": "v./n.",
+    "ipa": "/ˈɒfə(r)/",
+    "vi": "đề nghị, mời; lời đề nghị",
+    "example": "An [investor]{nhà đầu tư} made an [attractive offer]{lời đề nghị hấp dẫn} to [fund]{tài trợ} our [expansion]{mở rộng kinh doanh}.",
+    "exampleVi": "Một nhà đầu tư đã đưa ra lời đề nghị hấp dẫn để tài trợ cho việc mở rộng kinh doanh.",
+    "highlight": "offer"
+  },
+  {
+    "word": "primarily",
+    "pos": "adv.",
+    "ipa": "/praɪˈmerəli/",
+    "vi": "chủ yếu, trước hết",
+    "example": "Our [funding]{nguồn vốn} comes [primarily]{chủ yếu} from [retained profits]{lợi nhuận giữ lại}, not [external loans]{khoản vay từ bên ngoài}.",
+    "exampleVi": "Nguồn vốn của chúng tôi chủ yếu đến từ lợi nhuận giữ lại, không phải các khoản vay từ bên ngoài.",
+    "highlight": "primarily",
+    "family": [
+      { "pos": "adj.", "word": "primary", "vi": "chính, chủ yếu, đầu tiên" },
+      { "pos": "adv.", "word": "primarily", "vi": "chủ yếu, trước hết" },
+      { "pos": "n.", "word": "primacy", "vi": "vị trí hàng đầu, sự ưu tiên" }
+    ]
+  },
+  {
+    "word": "risk",
+    "pos": "n.",
+    "ipa": "/rɪsk/",
+    "vi": "rủi ro, nguy cơ",
+    "example": "Starting your own [business]{công việc kinh doanh} carries [significant risk]{rủi ro đáng kể}, but also great [rewards]{phần thưởng}.",
+    "exampleVi": "Tự mình khởi sự kinh doanh mang lại rủi ro đáng kể, nhưng cũng có những phần thưởng lớn.",
+    "highlight": "risk",
+    "family": [
+      { "pos": "n.", "word": "risk", "vi": "rủi ro, nguy cơ" },
+      { "pos": "v.", "word": "risk", "vi": "mạo hiểm, liều" },
+      { "pos": "adj.", "word": "risky", "vi": "có rủi ro, nguy hiểm" }
+    ]
+  },
+  {
+    "word": "strategy",
+    "pos": "n.",
+    "ipa": "/ˈstrætədʒi/",
+    "vi": "chiến lược, kế hoạch hành động",
+    "example": "The most important [strategy]{chiến lược} for [success]{thành công} is to start with a [sound business plan]{kế hoạch kinh doanh vững chắc}.",
+    "exampleVi": "Chiến lược quan trọng nhất để thành công là bắt đầu với một kế hoạch kinh doanh vững chắc.",
+    "highlight": "strategy",
+    "family": [
+      { "pos": "v.", "word": "strategize", "vi": "xây dựng chiến lược" },
+      { "pos": "n.", "word": "strategy", "vi": "chiến lược" },
+      { "pos": "adj.", "word": "strategic", "vi": "mang tính chiến lược" }
+    ]
+  },
+  {
+    "word": "strong",
+    "pos": "adj.",
+    "ipa": "/strɒŋ/",
+    "vi": "mạnh mẽ, vững chắc, có sức thuyết phục",
+    "example": "We aim to build a [strong company]{công ty vững mạnh} that can [withstand]{chịu được} [market downturns]{suy thoái thị trường}.",
+    "exampleVi": "Chúng tôi hướng đến việc xây dựng một công ty vững mạnh có thể chịu được các đợt suy thoái thị trường.",
+    "highlight": "strong"
+  },
+  {
+    "word": "substitution",
+    "pos": "n.",
+    "ipa": "/ˌsʌbstɪˈtjuːʃn/",
+    "vi": "sự thay thế, vật thay thế",
+    "example": "If a [supplier]{nhà cung cấp} cannot deliver, we may need a [substitution]{vật thay thế} to keep [production]{sản xuất} on schedule.",
+    "exampleVi": "Nếu một nhà cung cấp không thể giao hàng, chúng ta có thể cần một vật thay thế để giữ sản xuất đúng tiến độ.",
+    "highlight": "substitution",
+    "family": [
+      { "pos": "v./n.", "word": "substitute", "vi": "thay thế; vật thay thế" },
+      { "pos": "n.", "word": "substitution", "vi": "sự thay thế" },
+      { "pos": "adj.", "word": "substituted", "vi": "đã được thay thế" }
+    ]
+  }
+]

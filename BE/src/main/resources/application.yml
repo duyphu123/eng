@@ -1,0 +1,88 @@
+spring:
+    application:
+        name: salary-service
+        version: @project.version@
+        provider: SMV
+    profiles:
+        active: ${ENV_RUNTIME:dev}
+    jackson:
+        time-zone: Asia/Ho_Chi_Minh
+    banner:
+        location: configs/banner.info
+    cloud:
+        config:
+            enabled: false
+        inetutils:
+            preferred-networks:
+                - 100.99.3.
+                - 10.0.
+                - 10.1.
+                - 192.168.
+                - 127.0.0.
+    datasource:
+        url: ${DATASOURCE_URL}
+        username: ${DATASOURCE_USERNAME}
+        password: ${DATASOURCE_PASSWORD}
+        hikari:
+            catalog: ${DATASOURCE_SCHEMA}
+#    datasource-cap:
+#        jdbcUrl: ${DATASOURCE_CAP_URL}
+#        username: ${DATASOURCE_CAP_USERNAME}
+#        password: ${DATASOURCE_CAP_PASSWORD}
+#        hikari:
+#            cap: ${DATASOURCE_CAP_SCHEMA}
+#    data:
+#        redis:
+#            host: ${REDIS_HOST}
+#            port: ${REDIS_PORT}
+#            username: ${REDIS_USERNAME}
+#            password: ${REDIS_PASSWORD}
+#            database: ${REDIS_DATABASE}
+#            timeout: 2000ms
+#            connect-timeout: 1000ms
+#            lettuce:
+#                pool:
+#                    max-active: 20
+#                    max-idle: 5
+#                    min-idle: 2
+#                    max-wait: 1000ms
+    servlet:
+        multipart:
+            max-file-size: 50MB
+            max-request-size: 100MB
+eureka:
+    instance:
+        appname: ${spring.application.name}
+        hostname: ${spring.application.name}
+        prefer-ip-address: true
+        instance-id: ${spring.application.name}:${HOSTNAME}:${server.port}
+        lease-renewal-interval-in-seconds: 10
+        lease-expiration-duration-in-seconds: 30
+    client:
+        registry-fetch-interval-seconds: 5
+        register-with-eureka: true
+        fetch-registry: true
+server:
+    port: 8062
+    servlet:
+        context-path: /api/cab-service
+    tomcat:
+        max-parameter-count: -1  # Unlimited parameters
+        max-http-form-post-size: -1  # Unlimited POST size (hoặc 50MB)
+        max-part-count: 50
+ftp:
+    host: ${FTP_HOST}
+    port: ${FTP_PORT}
+    user: ${FTP_USERNAME}
+    password: ${FTP_PASSWORD}
+    directory: ${FTP_FOLDER}
+    directory-local: ${FTP_FOLDER_LOCAL}
+    client-mode: 2 # 2 = passive mode, 0 = active mode
+security:
+    jwt:
+        secret-key: ${JWT_SECRET_KEY}
+    key:
+        public: ${SECURITY_KEY_PUBLIC}
+        private: ${SECURITY_KEY_PRIVATE}
+gateway:
+    internal-api-key: ${GATEWAY_INTERNAL_API_KEY}

@@ -1,0 +1,28 @@
+${AnsiColor.RED}**********************************************************************************
+*${AnsiColor.BRIGHT_CYAN}           _____                        _____                    _____           ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}          /\    \                      /\    \                  /\    \          ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}         /::\    \                    /::\____\                /::\____\         ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}        /::::\    \                  /::::|   |               /:::/    /         ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}       /::::::\    \                /:::::|   |              /:::/    /          ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}      /:::/\:::\    \              /::::::|   |             /:::/    /           ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}     /:::/__\:::\    \            /:::/|::|   |            /:::/____/            ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}     \:::\   \:::\    \          /:::/ |::|   |            |::|    |             ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}   ___\:::\   \:::\    \        /:::/  |::|___|______      |::|    |     _____   ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}  /\   \:::\   \:::\    \      /:::/   |::::::::\    \     |::|    |    /\    \  ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN} /::\   \:::\   \:::\____\    /:::/    |:::::::::\____\    |::|    |   /::\____\ ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN} \:::\   \:::\   \::/    /    \::/    / ~~~~~/:::/    /    |::|    |  /:::/    / ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}  \:::\   \:::\   \/____/      \/____/      /:::/    /     |::|    | /:::/    /  ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}   \:::\   \:::\    \                      /:::/    /      |::|____|/:::/    /   ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}    \:::\   \:::\____\                    /:::/    /       |:::::::::::/    /    ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}     \:::\  /:::/    /                   /:::/    /         \:::::::::/____/     ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}      \:::\/:::/    /                   /:::/    /           ~~~~~~~~~~          ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}       \::::::/    /                   /:::/    /                                ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}        \::::/    /                   /:::/    /                                 ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}         \::/    /                    \::/    /                                  ${AnsiColor.RED}*
+*${AnsiColor.BRIGHT_CYAN}          \/____/                      \/____/                                   ${AnsiColor.RED}*
+${AnsiColor.RED}**********************************************************************************
+${AnsiColor.BRIGHT_CYAN}Service: ${AnsiColor.RED}${spring.application.name}${AnsiColor.WHITE}
+${AnsiColor.BRIGHT_CYAN}Version: ${AnsiColor.RED}${spring.application.version}${AnsiColor.WHITE}
+${AnsiColor.BRIGHT_CYAN}Powered by ${AnsiColor.RED}SMV${AnsiColor.BRIGHT_CYAN} with${AnsiColor.WHITE} ${AnsiColor.RED}Spring Boot ${spring-boot.version}${AnsiColor.WHITE}
+${AnsiColor.RED}********************************************************************************
+${AnsiStyle.NORMAL}
