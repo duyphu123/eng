@@ -1,0 +1,294 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+:host {
+  display: block;
+}
+
+/* ─── Tiêu đề ─── */
+.admin__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+
+  @include media-md {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.admin__eyebrow {
+  @include eyebrow;
+}
+
+.admin__title {
+  @include type-display-md;
+  color: var(--color-neutral-900);
+}
+
+.admin__sub {
+  @include type-body-sm;
+  color: var(--color-neutral-600);
+  margin: var(--space-1) 0 0;
+}
+
+/* ─── Thanh tìm kiếm ─── */
+.admin__toolbar {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.admin__search {
+  @include type-body-sm;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--rounded-md);
+  color: var(--color-neutral-800);
+  @include transition-default;
+
+  &:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
+  }
+}
+
+/* ─── Nút (button) ─── */
+.btn {
+  @include type-label-md;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--rounded-md);
+  cursor: pointer;
+  white-space: nowrap;
+  @include transition-default;
+  @include clickable-feedback;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-neutral-0);
+
+  &:hover:not(:disabled) {
+    background: var(--color-primary-strong);
+  }
+}
+
+.btn--ghost {
+  background: var(--color-neutral-0);
+  color: var(--color-neutral-600);
+  border-color: var(--color-neutral-200);
+
+  &:hover:not(:disabled) {
+    color: var(--color-primary);
+    border-color: var(--color-primary-soft);
+  }
+}
+
+.btn--danger {
+  background: var(--color-danger);
+  color: var(--color-neutral-0);
+
+  &:hover:not(:disabled) {
+    filter: brightness(0.92);
+  }
+}
+
+.btn--sm {
+  @include type-caption;
+  min-height: 36px;
+  padding: var(--space-1) var(--space-3);
+}
+
+/* ─── Bảng danh sách ─── */
+.admin__table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--rounded-lg);
+  background: var(--color-neutral-0);
+}
+
+.admin__table {
+  width: 100%;
+  border-collapse: collapse;
+  @include type-body-sm;
+
+  th,
+  td {
+    padding: var(--space-3);
+    text-align: left;
+    border-bottom: 1px solid var(--color-neutral-100);
+    white-space: nowrap;
+  }
+
+  thead th {
+    @include type-label-md;
+    color: var(--color-neutral-600);
+    background: var(--color-neutral-50);
+  }
+
+  tbody tr:hover {
+    background: var(--color-neutral-50);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+}
+
+.admin__cell-word {
+  @include type-mono-vocab;
+  color: var(--color-neutral-900);
+  font-weight: 600;
+}
+
+.admin__cell-ipa {
+  @include type-mono-vocab;
+  color: var(--color-neutral-600);
+}
+
+.admin__th-action {
+  text-align: right;
+}
+
+.admin__cell-action {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: flex-end;
+}
+
+/* ─── Trạng thái rỗng / loading / lỗi ─── */
+.admin__state {
+  @include type-body-md;
+  color: var(--color-neutral-600);
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+}
+
+.admin__error {
+  @include type-body-sm;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--rounded-md);
+  background: var(--color-neutral-0);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+/* ─── Popup (modal) ─── */
+.admin-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.admin-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.admin-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  @include card-base;
+  box-shadow: 0 12px 40px -8px rgba(15, 23, 42, 0.35);
+}
+
+.admin-modal__title {
+  @include type-heading-lg;
+  color: var(--color-neutral-900);
+  margin-bottom: var(--space-4);
+}
+
+/* ─── Form trong popup ─── */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.admin-form__row {
+  display: grid;
+  gap: var(--space-3);
+
+  @include media-md {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.admin-field__label {
+  @include type-label-md;
+  color: var(--color-neutral-600);
+}
+
+.admin-field__req {
+  color: var(--color-danger);
+}
+
+.admin-field__input {
+  @include type-body-md;
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--rounded-md);
+  color: var(--color-neutral-900);
+  @include transition-default;
+
+  &:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
+  }
+}
+
+.admin-field__textarea {
+  min-height: 64px;
+  resize: vertical;
+}
+
+.admin-form__error {
+  @include type-body-sm;
+  color: var(--color-danger);
+}
+
+.admin-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}

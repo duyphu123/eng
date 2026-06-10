@@ -1,0 +1,26 @@
+{
+  // ====================================================================
+  // Cấu hình cho extension Java (redhat.java) — phục vụ nhảy code kiểu IntelliJ
+  // --------------------------------------------------------------------
+  // LƯU Ý: KHÔNG set "java.jdt.ls.java.home" ở đây.
+  //   Bản redhat.java 1.54 cần JDK 21 để CHẠY engine, và extension ĐÃ kèm sẵn
+  //   một JDK 21 riêng -> cứ để trống thì nó tự dùng JDK 21 kèm sẵn (đúng nhất).
+  //
+  // Phần dưới chỉ khai JDK 17 để engine PHÂN TÍCH/BUILD project BE cho khớp
+  //   "release 17" trong BE/pom.xml (Maven). 2 việc này tách biệt nhau.
+  // ====================================================================
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "C:\\Program Files\\Java\\jdk-17",
+      "default": true
+    }
+  ],
+
+  // Tự cập nhật lại khi pom.xml đổi (đỡ phải bấm tay "reload project")
+  "java.configuration.updateBuildConfiguration": "automatic",
+
+  // Bấm Ctrl+Click khi đang hover sẽ mở "peek" (xem nhanh) thay vì nhảy hẳn — tùy thích
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleImplementations": "peek"
+}

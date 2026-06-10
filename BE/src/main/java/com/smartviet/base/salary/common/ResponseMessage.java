@@ -64,4 +64,25 @@ public class ResponseMessage {
         }
     }
 
+    /**
+     * KEY thông báo (i18n) cho module Vocabulary. Mỗi hằng số ở đây là 1 KEY, KHÔNG phải câu chữ.
+     * Câu thật theo từng ngôn ngữ nằm ở src/main/resources/static/lang_*.properties (en/vi/lo/zh).
+     * Dùng các key này ở 2 chỗ: message của @NotBlank/@Size trong DTO request, và new LogicException(...).
+     * Khi thêm key mới phải thêm dòng tương ứng ở CẢ 4 file lang_* (LangBundleParityTest sẽ kiểm tra parity).
+     */
+    public static final class Vocabulary {
+        public static final String NOT_FOUND = "vocabulary.not.found";
+        public static final String MISSING_WORD = "vocabulary.missing.word";
+        public static final String MISSING_MEANING = "vocabulary.missing.meaning";
+        public static final String INVALID_WORD_LENGTH = "vocabulary.invalid.word.length";
+        public static final String INVALID_MEANING_LENGTH = "vocabulary.invalid.meaning.length";
+        public static final String INVALID_PARTOFSPEECH_LENGTH = "vocabulary.invalid.partofspeech.length";
+        public static final String INVALID_PRONUNCIATION_LENGTH = "vocabulary.invalid.pronunciation.length";
+        public static final String INVALID_EXAMPLE_LENGTH = "vocabulary.invalid.example.length";
+        public static final String INVALID_LEVEL_LENGTH = "vocabulary.invalid.level.length";
+
+        private Vocabulary() {
+        }
+    }
+
 }

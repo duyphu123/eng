@@ -1,11 +1,11 @@
-package com.smartviet.base.cab.database;
+package com.smartviet.base.salary.database;
 
 import com.smartviet.base.salary.common.Constants;
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,9 +26,11 @@ public class DataSourcePrimaryConfig {
 
     @Primary
     @Bean(name = Constants.Database.Primary.BEAN_PRIMARY_DATASOURCE)
-    @ConfigurationProperties(prefix = Constants.Database.Primary.PROPERTY_PREFIX)
-    public DataSource primaryDataSource() {
-        return DataSourceBuilder.create().build();
+    @ConfigurationProperties(prefix = Constants.Database.Primary.PROPERTY_PREFIX + ".hikari")
+    public DataSource primaryDataSource(DataSourceProperties properties) {
+        // initializeDataSourceBuilder() lấy url/username/password/driver từ spring.datasource.*
+        // và map url -> jdbcUrl đúng cho HikariCP; @ConfigurationProperties(...hikari) áp pool settings.
+        return properties.initializeDataSourceBuilder().build();
     }
 
     @Primary

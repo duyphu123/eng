@@ -31,7 +31,8 @@ public class SecurityFilter {
     private final AuthHandler authHandler;
 
     private static final String[] WHITE_LIST_URL = {  // URLs that do not require authentication
-            "/test/**"
+            "/test/**",
+            "/vocabulary/**"   // TODO(eng): tạm mở để học CRUD; siết lại (yêu cầu JWT) khi hoàn thiện
     };
 
     @Bean

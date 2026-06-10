@@ -50,6 +50,8 @@ export class SidebarComponent {
         },
       ],
     },
+    // Mục điều hướng tới trang thực hành API CRUD của BE.
+    { label: '🛠️ Thực hành API', route: '/admin' },
   ];
 
   private readonly expanded = signal(

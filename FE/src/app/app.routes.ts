@@ -7,6 +7,12 @@ export const routes: Routes = [
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
+    // Trang quản trị / thực hành API CRUD của BE.
+    path: 'admin',
+    loadComponent: () =>
+      import('./pages/admin/admin.component').then((m) => m.AdminComponent),
+  },
+  {
     path: 'chu-de/contract/tu-vung',
     loadComponent: () =>
       import('./pages/contract/vocab/contract-vocab.component').then(

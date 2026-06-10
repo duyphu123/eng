@@ -1,0 +1,183 @@
+<!-- ─── Tiêu đề + nút Tạo mới ─── -->
+<header class="admin__head">
+  <div>
+    <p class="admin__eyebrow">EngToeic · Thực hành API</p>
+    <h1 class="admin__title">Quản trị Từ vựng</h1>
+    <p class="admin__sub">
+      Thử toàn bộ API CRUD của BE: danh sách, tạo, sửa, xoá.
+    </p>
+  </div>
+  <button type="button" class="btn btn--primary" (click)="openCreate()">
+    + Tạo mới
+  </button>
+</header>
+
+<!-- ─── Thanh tìm kiếm (GET /vocabulary?keyword=) ─── -->
+<div class="admin__toolbar">
+  <input
+    class="admin__search"
+    type="text"
+    placeholder="Tìm theo word hoặc meaning…"
+    [(ngModel)]="keywordText"
+    (keyup.enter)="search()"
+  />
+  <button type="button" class="btn btn--ghost" (click)="search()">Tìm</button>
+</div>
+
+<!-- ─── Vùng nội dung: loading / lỗi / rỗng / bảng ─── -->
+@if (loading()) {
+  <p class="admin__state">Đang tải dữ liệu…</p>
+} @else if (error()) {
+  <div class="admin__error" role="alert">{{ error() }}</div>
+} @else if (items().length === 0) {
+  <p class="admin__state">Chưa có từ vựng nào. Bấm “+ Tạo mới” để thêm.</p>
+} @else {
+  <div class="admin__table-wrap">
+    <table class="admin__table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Word</th>
+          <th>Meaning</th>
+          <th>Loại từ</th>
+          <th>Phiên âm</th>
+          <th>Level</th>
+          <th class="admin__th-action">Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (v of items(); track v.vocabularyId) {
+          <tr>
+            <td>{{ v.vocabularyId }}</td>
+            <td class="admin__cell-word">{{ v.word }}</td>
+            <td>{{ v.meaning }}</td>
+            <td>{{ v.partOfSpeech || '—' }}</td>
+            <td class="admin__cell-ipa">{{ v.pronunciation || '—' }}</td>
+            <td>{{ v.level || '—' }}</td>
+            <td>
+              <div class="admin__cell-action">
+                <button
+                  type="button"
+                  class="btn btn--ghost btn--sm"
+                  (click)="openEdit(v)"
+                >
+                  Sửa
+                </button>
+                <button
+                  type="button"
+                  class="btn btn--danger btn--sm"
+                  (click)="remove(v)"
+                >
+                  Xoá
+                </button>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}
+
+<!-- ─── POPUP tạo / sửa ─── -->
+@if (modalOpen()) {
+  <div class="admin-modal" role="dialog" aria-modal="true">
+    <!-- nền mờ; bấm ra ngoài để đóng -->
+    <div class="admin-modal__backdrop" (click)="closeModal()"></div>
+
+    <div class="admin-modal__panel">
+      <h2 class="admin-modal__title">{{ modalTitle() }}</h2>
+
+      <form class="admin-form" (ngSubmit)="save()">
+        <label class="admin-field">
+          <span class="admin-field__label">
+            Word <span class="admin-field__req">*</span>
+          </span>
+          <input
+            class="admin-field__input"
+            type="text"
+            name="word"
+            [(ngModel)]="form.word"
+            placeholder="vd: invoice"
+          />
+        </label>
+
+        <label class="admin-field">
+          <span class="admin-field__label">
+            Meaning (nghĩa) <span class="admin-field__req">*</span>
+          </span>
+          <input
+            class="admin-field__input"
+            type="text"
+            name="meaning"
+            [(ngModel)]="form.meaning"
+            placeholder="vd: hóa đơn"
+          />
+        </label>
+
+        <div class="admin-form__row">
+          <label class="admin-field">
+            <span class="admin-field__label">Loại từ (part of speech)</span>
+            <input
+              class="admin-field__input"
+              type="text"
+              name="partOfSpeech"
+              [(ngModel)]="form.partOfSpeech"
+              placeholder="noun, verb…"
+            />
+          </label>
+
+          <label class="admin-field">
+            <span class="admin-field__label">Phiên âm (pronunciation)</span>
+            <input
+              class="admin-field__input"
+              type="text"
+              name="pronunciation"
+              [(ngModel)]="form.pronunciation"
+              placeholder="/ˈɪnvɔɪs/"
+            />
+          </label>
+        </div>
+
+        <label class="admin-field">
+          <span class="admin-field__label">Ví dụ (example)</span>
+          <textarea
+            class="admin-field__input admin-field__textarea"
+            name="example"
+            rows="2"
+            [(ngModel)]="form.example"
+          ></textarea>
+        </label>
+
+        <label class="admin-field">
+          <span class="admin-field__label">Level</span>
+          <input
+            class="admin-field__input"
+            type="text"
+            name="level"
+            [(ngModel)]="form.level"
+            placeholder="TOEIC 600…"
+          />
+        </label>
+
+        @if (formError()) {
+          <div class="admin-form__error" role="alert">{{ formError() }}</div>
+        }
+
+        <div class="admin-form__actions">
+          <button
+            type="button"
+            class="btn btn--ghost"
+            (click)="closeModal()"
+            [disabled]="saving()"
+          >
+            Huỷ
+          </button>
+          <button type="submit" class="btn btn--primary" [disabled]="saving()">
+            {{ saving() ? 'Đang lưu…' : 'Lưu' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+}

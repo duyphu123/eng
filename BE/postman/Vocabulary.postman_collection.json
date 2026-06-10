@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "eng-vocab-collection-0001",
+    "name": "EngToeic · Vocabulary API (BE)",
+    "description": "Bộ test cho API Vocabulary của BE (salary-service).\n\nQUY TẮC DỰ ÁN: chỉ dùng GET (đọc) và POST (ghi). create/update/delete đều là POST.\n\nBaseUrl đã đặt sẵn trong biến collection = http://localhost:8062/api/cab-service (port 8062 + context-path /api/cab-service). Vì /vocabulary/** đang được whitelist nên KHÔNG cần Authorization.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET · Danh sách tất cả",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept-Language", "value": "vi" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/vocabulary",
+          "host": ["{{baseUrl}}"],
+          "path": ["vocabulary"]
+        },
+        "description": "Lấy toàn bộ từ vựng. Trả về ExecutionResult với data là 1 mảng."
+      }
+    },
+    {
+      "name": "GET · Tìm kiếm theo keyword",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept-Language", "value": "vi" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/vocabulary?keyword=invoice",
+          "host": ["{{baseUrl}}"],
+          "path": ["vocabulary"],
+          "query": [
+            { "key": "keyword", "value": "invoice" }
+          ]
+        },
+        "description": "Tìm gần đúng theo word HOẶC meaning (không phân biệt hoa/thường)."
+      }
+    },
+    {
+      "name": "GET · Chi tiết theo id",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept-Language", "value": "vi" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/vocabulary/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["vocabulary", "1"]
+        },
+        "description": "Lấy 1 từ theo id. Không tìm thấy -> 400 (vocabulary.not.found)."
+      }
+    },
+    {
+      "name": "POST · Tạo mới",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept-Language", "value": "vi" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"word\": \"benefit\",\n  \"meaning\": \"lợi ích\",\n  \"partOfSpeech\": \"noun\",\n  \"pronunciation\": \"/ˈbenɪfɪt/\",\n  \"example\": \"Health insurance is an employee benefit.\",\n  \"level\": \"TOEIC 600\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/vocabulary",
+          "host": ["{{baseUrl}}"],
+          "path": ["vocabulary"]
+        },
+        "description": "Tạo 1 từ mới. word + meaning là BẮT BUỘC. Trả về bản ghi đã có vocabularyId (do DB sinh)."
+      }
+    },
+    {
+      "name": "POST · Cập nhật (id/update)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept-Language", "value": "vi" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"word\": \"schedule\",\n  \"meaning\": \"lịch trình (đã cập nhật)\",\n  \"partOfSpeech\": \"noun\",\n  \"pronunciation\": \"/ˈʃedjuːl/\",\n  \"example\": \"The meeting schedule has been updated.\",\n  \"level\": \"TOEIC 700\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/vocabulary/4/update",
+          "host": ["{{baseUrl}}"],
+          "path": ["vocabulary", "4", "update"]
+        },
+        "description": "CẬP NHẬT dùng POST (không dùng PUT) theo quy tắc dự án. id lấy từ URL (đổi 4 thành id bạn muốn sửa), dữ liệu mới lấy từ body."
+      }
+    },
+    {
+      "name": "POST · Xoá (id/delete)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept-Language", "value": "vi" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/vocabulary/4/delete",
+          "host": ["{{baseUrl}}"],
+          "path": ["vocabulary", "4", "delete"]
+        },
+        "description": "XOÁ dùng POST (không dùng DELETE) theo quy tắc dự án. Không cần body; đổi 4 thành id bạn muốn xoá (vd id của từ vừa tạo). Trả về id đã xoá."
+      }
+    },
+    {
+      "name": "GET · (LỖI demo) id không tồn tại → 400",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept-Language", "value": "vi" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/vocabulary/999999",
+          "host": ["{{baseUrl}}"],
+          "path": ["vocabulary", "999999"]
+        },
+        "description": "Ca lỗi: id không tồn tại -> 400 + keyMessage vocabulary.not.found (message theo Accept-Language)."
+      }
+    },
+    {
+      "name": "POST · (LỖI demo) thiếu word → 400",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept-Language", "value": "vi" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"meaning\": \"thiếu word nên sẽ bị 400\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/vocabulary",
+          "host": ["{{baseUrl}}"],
+          "path": ["vocabulary"]
+        },
+        "description": "Ca lỗi: body thiếu word (@NotBlank) -> 400 + keyMessage invalid.request, do GlobalExceptionHandler trả tự động."
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8062/api/cab-service", "type": "string" }
+  ]
+}
